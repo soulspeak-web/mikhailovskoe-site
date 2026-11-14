@@ -1,0 +1,12 @@
+node_modules/
+dist/
+docs/figma-assets/
+docs/contact-*.jpg
+*.log
+.DS_Store
+
+docs/version2/
+docs/version1-before-merge.zip
+docs/v2-contact-*.jpg
+
+*.fig
