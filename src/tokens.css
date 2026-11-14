@@ -1,0 +1,16 @@
+:root {
+  --milk: #fcf9f2;
+  --paper: #f3eddf;
+  --burgundy: #6e2a2e;
+  --burgundy-dark: #502024;
+  --ink: #24231f;
+  --muted: #706c62;
+  --sand: #e8d8bd;
+  --gold: #b49356;
+  --olive: #7e856b;
+  --line: #dcd2c2;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Manrope", Arial, sans-serif;
+  --max-width: 1320px;
+  --gutter: 48px;
+}

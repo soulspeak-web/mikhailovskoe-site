@@ -1,0 +1,207 @@
+{
+  "archive-cyclists-480.webp": {
+    "width": 480,
+    "height": 368,
+    "bytes": 17864
+  },
+  "archive-cyclists-960.webp": {
+    "width": 960,
+    "height": 736,
+    "bytes": 48902
+  },
+  "archive-cyclists.webp": {
+    "width": 1280,
+    "height": 981,
+    "bytes": 99264
+  },
+  "archive-hall.webp": {
+    "width": 1024,
+    "height": 800,
+    "bytes": 205564
+  },
+  "archive-main-480.webp": {
+    "width": 480,
+    "height": 352,
+    "bytes": 38396
+  },
+  "archive-main-960.webp": {
+    "width": 960,
+    "height": 704,
+    "bytes": 110010
+  },
+  "archive-main.webp": {
+    "width": 1430,
+    "height": 1049,
+    "bytes": 228774
+  },
+  "archive-wing.webp": {
+    "width": 852,
+    "height": 689,
+    "bytes": 77640
+  },
+  "detail.webp": {
+    "width": 1280,
+    "height": 960,
+    "bytes": 237956
+  },
+  "estate-480.webp": {
+    "width": 480,
+    "height": 360,
+    "bytes": 69108
+  },
+  "estate-960.webp": {
+    "width": 960,
+    "height": 720,
+    "bytes": 245654
+  },
+  "estate-front-480.webp": {
+    "width": 480,
+    "height": 360,
+    "bytes": 41058
+  },
+  "estate-front-960.webp": {
+    "width": 960,
+    "height": 719,
+    "bytes": 152176
+  },
+  "estate-front.webp": {
+    "width": 1280,
+    "height": 959,
+    "bytes": 301738
+  },
+  "estate-painting.webp": {
+    "width": 700,
+    "height": 451,
+    "bytes": 71832
+  },
+  "estate.webp": {
+    "width": 1800,
+    "height": 1350,
+    "bytes": 871662
+  },
+  "facades.webp": {
+    "width": 1800,
+    "height": 894,
+    "bytes": 124052
+  },
+  "film.webp": {
+    "width": 1450,
+    "height": 967,
+    "bytes": 101288
+  },
+  "floor-plan.webp": {
+    "width": 1800,
+    "height": 1268,
+    "bytes": 66794
+  },
+  "masterplan.webp": {
+    "width": 1251,
+    "height": 1071,
+    "bytes": 126816
+  },
+  "merch-postcards.webp": {
+    "width": 466,
+    "height": 317,
+    "bytes": 31042
+  },
+  "merch-stickers.webp": {
+    "width": 549,
+    "height": 253,
+    "bytes": 18988
+  },
+  "merch-tickets.webp": {
+    "width": 446,
+    "height": 322,
+    "bytes": 15724
+  },
+  "model.webp": {
+    "width": 1800,
+    "height": 1273,
+    "bytes": 47328
+  },
+  "park-480.webp": {
+    "width": 480,
+    "height": 264,
+    "bytes": 43862
+  },
+  "park-960.webp": {
+    "width": 960,
+    "height": 528,
+    "bytes": 160658
+  },
+  "park-plan.webp": {
+    "width": 902,
+    "height": 837,
+    "bytes": 63156
+  },
+  "park.webp": {
+    "width": 1000,
+    "height": 550,
+    "bytes": 211316
+  },
+  "portrait-krechetnikov.webp": {
+    "width": 500,
+    "height": 668,
+    "bytes": 131308
+  },
+  "portrait-sergey.webp": {
+    "width": 1038,
+    "height": 1395,
+    "bytes": 78246
+  },
+  "portrait-sheremetev.webp": {
+    "width": 444,
+    "height": 499,
+    "bytes": 43496
+  },
+  "portrait-sultanov.webp": {
+    "width": 499,
+    "height": 597,
+    "bytes": 35530
+  },
+  "sanatorium.webp": {
+    "width": 1548,
+    "height": 980,
+    "bytes": 200550
+  },
+  "wing-concept-480.webp": {
+    "width": 480,
+    "height": 362,
+    "bytes": 48852
+  },
+  "wing-concept-960.webp": {
+    "width": 960,
+    "height": 723,
+    "bytes": 182856
+  },
+  "wing-concept.webp": {
+    "width": 1168,
+    "height": 880,
+    "bytes": 356114
+  },
+  "wing-detail-480.webp": {
+    "width": 480,
+    "height": 362,
+    "bytes": 39358
+  },
+  "wing-detail-960.webp": {
+    "width": 960,
+    "height": 723,
+    "bytes": 142332
+  },
+  "wing-detail.webp": {
+    "width": 1168,
+    "height": 880,
+    "bytes": 295796
+  },
+  "wing-scheme.webp": {
+    "width": 504,
+    "height": 1013,
+    "bytes": 64444
+  },
+  "zoning.webp": {
+    "width": 1791,
+    "height": 1080,
+    "bytes": 323498
+  }
+}
