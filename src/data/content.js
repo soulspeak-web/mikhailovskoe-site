@@ -245,11 +245,6 @@ export const galleries = {
         "Архивное фото из материалов Figma. Дата, автор и источник уточняются.",
     },
     {
-      src: "archive-hall.webp",
-      title: "Исторический интерьер",
-      caption: "Архивное фото из материалов проекта. Атрибуция уточняется.",
-    },
-    {
       src: "archive-wing.webp",
       title: "Архивный снимок из подборки",
       caption:
@@ -257,13 +252,6 @@ export const galleries = {
     },
   ],
   concept: [
-    {
-      src: "facades.webp",
-      diagram: true,
-      title: "Фасады ансамбля",
-      caption:
-        "Рабочий архитектурный материал из Figma. Редакция и статус согласования уточняются.",
-    },
     {
       src: "model.webp",
       diagram: true,
