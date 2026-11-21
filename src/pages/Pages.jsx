@@ -1,3 +1,5 @@
+import ShopCatalog from "../components/ShopCatalog";
+import "../shop-catalog.css";
 import ProjectImage from "../components/ProjectImage";
 import { EnquiryForm } from "../components/EnquiryForm";
 import { useState } from "react";
@@ -512,60 +514,26 @@ export function About() {
     </>
   );
 }
-const products = [
-  {
-    title: "Фирменные открытки",
-    image: "merch-postcards.webp",
-    text: "Архивная эстетика в серии открыток. Изображения — из утверждённого листа айдентики; состав набора уточняется.",
-  },
-  {
-    title: "Коллекция наклеек",
-    image: "merch-stickers.webp",
-    text: "Монограмма, киноплёнка и фраза «Стоп, снято!». Дизайнерский образец фирменной графики.",
-  },
-];
+
+
 export function Shop() {
-  const [product, setProduct] = useState(null);
   return (
     <>
-      <PageIntro number="Коллекция" title="Маленькая часть большой истории">
-        Демонстрационный каталог фирменной графики и сувениров «Михайловского».
+      <PageIntro
+        number="Коллекция"
+        title="Маленькая часть большой истории"
+      >
+        Демонстрационный каталог фирменной графики и сувениров
+        «Михайловского».
       </PageIntro>
+
       <div className="container page-content">
-        <div className="product-grid">
-          {products.map((p) => (
-            <article className="product-card" key={p.title}>
-              <button
-                className="product-image"
-                aria-label={`Подробнее: ${p.title}`}
-                onClick={() => setProduct(p)}
-              >
-                <img src={asset(p.image)} alt={p.title} />
-                <span>Дизайнерский образец</span>
-              </button>
-              <Eyebrow>Коллекция Михайловское</Eyebrow>
-              <h2>{p.title}</h2>
-              <p>{p.text}</p>
-              <button className="text-link" onClick={() => setProduct(p)}>
-                Рассмотреть образец ↗
-              </button>
-            </article>
-          ))}
-        </div>
+        <ShopCatalog />
       </div>
-      {product && (
-        <Modal title={product.title} onClose={() => setProduct(null)}>
-          <img
-            className="lightbox-image"
-            src={asset(product.image)}
-            alt={product.title}
-          />
-          <p>{product.text}</p>
-        </Modal>
-      )}
     </>
   );
 }
+
 export function NotFound() {
   return (
     <div className="container not-found">

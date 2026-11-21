@@ -11,7 +11,7 @@ body {
   background: var(--milk);
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.7;
 }
 button,
@@ -65,15 +65,15 @@ h3 {
   color: var(--burgundy);
 }
 h1 {
-  font-size: clamp(48px, 5.3vw, 80px);
+  font-size: 48px;
   letter-spacing: -0.035em;
 }
 h2 {
-  font-size: clamp(34px, 3.1vw, 48px);
+  font-size: 40px;
   letter-spacing: -0.025em;
 }
 h3 {
-  font-size: 29px;
+  font-size: 24px;
 }
 p + p {
   margin-top: 16px;
@@ -121,7 +121,7 @@ main:focus {
   align-items: center;
   gap: 10px;
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.18em;
   font-family: var(--sans);
   font-weight: 600;
@@ -144,13 +144,13 @@ main:focus {
   background: var(--burgundy);
   border: 1px solid var(--burgundy);
   color: var(--milk);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.5;
   border-radius: 2px;
 }
 .button span {
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 400;
 }
 .button:hover {
@@ -168,7 +168,7 @@ main:focus {
   color: var(--milk);
 }
 .text-link {
-  font-size: 12px;
+  font-size: 14px;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -179,7 +179,7 @@ main:focus {
   font-weight: 600;
 }
 .text-link span {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 400;
 }
 .text-link:hover {
@@ -227,7 +227,7 @@ main:focus {
   padding: 9px var(--gutter);
   background: var(--burgundy);
   color: var(--milk);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.13em;
 }
 .project-bar span:last-child {
@@ -258,7 +258,7 @@ main:focus {
   gap: 23px;
   align-items: center;
   margin-left: auto;
-  font-size: 11px;
+  font-size: 14px;
   white-space: nowrap;
 }
 .desktop-nav > a {
@@ -272,7 +272,7 @@ main:focus {
   background: var(--burgundy);
   color: var(--milk);
   padding: 13px 16px;
-  font-size: 10px;
+  font-size: 14px;
   white-space: nowrap;
   display: flex;
   gap: 18px;
@@ -283,13 +283,13 @@ main:focus {
   color: white;
 }
 .header-cta span {
-  font-size: 17px;
+  font-size: 20px;
 }
 .menu-toggle {
   display: none;
   width: 44px;
   height: 44px;
-  font-size: 25px;
+  font-size: 24px;
   color: var(--burgundy);
 }
 .mobile-nav {
@@ -324,18 +324,18 @@ main:focus {
   z-index: 1;
 }
 .hero h1 {
-  font-size: clamp(38px, 4.1vw, 65px);
+  font-size: 64px;
   line-height: 1.04;
   text-transform: uppercase;
   letter-spacing: -0.035em;
   margin-bottom: 25px;
 }
 .hero h1 > span {
-  font-size: 1.04em;
+  font-size: inherit;
 }
 .hero-subtitle {
   font-family: var(--serif);
-  font-size: 31px;
+  font-size: 32px;
   line-height: 1.1;
   color: var(--ink);
 }
@@ -343,7 +343,7 @@ main:focus {
   color: var(--burgundy);
 }
 .hero-description {
-  font-size: 12px;
+  font-size: 16px;
   max-width: 410px;
   line-height: 1.85;
   margin-top: 20px;
@@ -355,12 +355,12 @@ main:focus {
   margin-top: 28px;
 }
 .hero-actions .text-link {
-  font-size: 11px;
+  font-size: 14px;
   gap: 15px;
 }
 .hero-status {
   margin-top: 37px;
-  font-size: 9px;
+  font-size: 12px;
   display: flex;
   align-items: center;
   gap: 9px;
@@ -404,7 +404,7 @@ main:focus {
   display: flex;
   justify-content: space-between;
   color: white;
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 0.18em;
   text-shadow: 0 1px 4px #000;
 }
@@ -426,7 +426,7 @@ main:focus {
   bottom: 23px;
   right: 28px;
   color: white;
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 0.04em;
 }
 .quick-links {
@@ -459,12 +459,12 @@ main:focus {
   background: var(--burgundy);
   color: var(--milk);
   font-family: var(--serif);
-  font-size: 51px;
+  font-size: 56px;
   text-align: center;
   line-height: 85px;
 }
 .quick-card > div > span {
-  font-size: 7px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   color: var(--muted);
 }
@@ -473,7 +473,7 @@ main:focus {
   margin-block: 6px;
 }
 .quick-card p {
-  font-size: 9px;
+  font-size: 12px;
   color: var(--muted);
 }
 .quick-card > span {
@@ -527,22 +527,22 @@ main:focus {
   color: var(--milk);
 }
 .opening-banner .eyebrow {
-  font-size: 8px;
+  font-size: 12px;
   margin-bottom: 10px;
 }
 .opening-banner h2 {
-  font-size: 36px;
+  font-size: 40px;
 }
 .opening-banner h2 em {
   color: var(--sand);
 }
 .opening-banner p {
-  font-size: 10px;
+  font-size: 16px;
   margin-top: 9px;
 }
 .opening-banner small {
   display: block;
-  font-size: 8px;
+  font-size: 12px;
   color: var(--sand);
   margin-top: 8px;
 }
@@ -554,7 +554,7 @@ main:focus {
   display: flex;
   align-items: center;
   gap: 14px;
-  font-size: 14px;
+  font-size: 16px;
   margin: 0;
 }
 .opening-days > p + p {
@@ -569,13 +569,13 @@ main:focus {
 }
 .opening-days small {
   margin: 2px 0 0;
-  font-size: 8px;
+  font-size: 12px;
 }
 .opening-banner > .button {
   color: var(--burgundy);
   background: var(--milk);
   border-color: var(--milk);
-  font-size: 10px;
+  font-size: 14px;
   padding: 11px 17px;
 }
 .opening-banner > .button:hover {
@@ -610,12 +610,12 @@ main:focus {
   color: var(--burgundy);
 }
 .event-category {
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 .event-top > span:last-child {
-  font-size: 22px;
+  font-size: 24px;
 }
 .event-body {
   display: flex;
@@ -636,17 +636,17 @@ main:focus {
 }
 .event-date strong {
   font-family: var(--serif);
-  font-size: 44px;
+  font-size: 48px;
   line-height: 0.95;
   font-weight: 400;
 }
 .event-date span {
-  font-size: 7px;
+  font-size: 12px;
   margin-top: 10px;
   letter-spacing: 0.04em;
 }
 .event-card h3 {
-  font-size: 25px;
+  font-size: 24px;
   color: var(--ink);
 }
 .event-card h3 a:after {
@@ -655,7 +655,7 @@ main:focus {
   inset: 0;
 }
 .event-body p {
-  font-size: 10px;
+  font-size: 16px;
   color: var(--muted);
   margin-top: 13px;
 }
@@ -688,7 +688,7 @@ main:focus {
   border-right: 0;
 }
 .ticket-footer > span:first-child {
-  font-size: 9px;
+  font-size: 12px;
   color: var(--muted);
 }
 .ticket-barcode {
@@ -706,7 +706,7 @@ main:focus {
   opacity: 0.6;
 }
 .card-status {
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 0.01em;
   color: var(--muted);
   padding: 0 22px 15px;
@@ -729,7 +729,7 @@ main:focus {
   filter: sepia(0.18);
 }
 .heritage-photo > span {
-  font-size: 9px;
+  font-size: 12px;
   display: block;
   margin-top: 12px;
   color: var(--muted);
@@ -738,7 +738,7 @@ main:focus {
   margin-bottom: 24px;
 }
 .heritage-section p {
-  font-size: 13px;
+  font-size: 16px;
   max-width: 470px;
 }
 .heritage-section .button {
@@ -772,11 +772,11 @@ main:focus {
   border-bottom: 1px solid var(--line);
 }
 .space-card-text .eyebrow {
-  font-size: 8px;
+  font-size: 12px;
   margin-bottom: 10px;
 }
 .space-card h3 {
-  font-size: 30px;
+  font-size: 32px;
   margin-bottom: 12px;
 }
 .space-card h3 a {
@@ -786,10 +786,10 @@ main:focus {
 }
 .space-card h3 span {
   font-family: var(--sans);
-  font-size: 19px;
+  font-size: 20px;
 }
 .space-card p {
-  font-size: 12px;
+  font-size: 16px;
   color: var(--muted);
 }
 .placeholder {
@@ -816,7 +816,7 @@ main:focus {
   max-width: 270px;
   text-align: center;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.04em;
 }
 .placeholder-lines {
@@ -866,7 +866,7 @@ main:focus {
   margin-bottom: 12px;
 }
 .directions p {
-  font-size: 12px;
+  font-size: 16px;
   max-width: 310px;
 }
 .audience-grid {
@@ -885,7 +885,7 @@ main:focus {
   margin-bottom: 17px;
 }
 .audience-grid p {
-  font-size: 12px;
+  font-size: 16px;
   max-width: 350px;
   margin-bottom: 24px;
 }
@@ -901,19 +901,19 @@ main:focus {
 }
 .footer-brand {
   font-family: var(--serif);
-  font-size: 38px;
+  font-size: 40px;
   color: var(--milk);
   line-height: 1.1;
 }
 .footer-brand > span {
   display: block;
   font-family: var(--sans);
-  font-size: 10px;
+  font-size: 16px;
   margin-top: 13px;
   color: var(--sand);
 }
 .footer-grid p {
-  font-size: 10px;
+  font-size: 12px;
   color: #c2c1b8;
   margin-top: 24px;
 }
@@ -921,13 +921,13 @@ main:focus {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px 16px;
-  font-size: 11px;
+  font-size: 16px;
 }
 .footer-grid a:hover {
   color: var(--sand);
 }
 .footer-status {
-  font-size: 11px;
+  font-size: 16px;
 }
 .footer-status .status-dot {
   background: var(--gold);
@@ -936,7 +936,7 @@ main:focus {
 .footer-bottom {
   display: flex;
   justify-content: space-between;
-  font-size: 9px;
+  font-size: 12px;
   color: #b6b6aa;
   border-top: 1px solid #ffffff20;
   padding-top: 24px;
@@ -950,7 +950,7 @@ main:focus {
   max-width: 1060px;
 }
 .intro-text {
-  font-size: 17px;
+  font-size: 20px;
   max-width: 460px;
   color: var(--muted);
   margin-top: 23px;
@@ -967,10 +967,10 @@ main:focus {
   border-left: 2px solid var(--gold);
   margin-bottom: 28px;
   color: #625b4d;
-  font-size: 12px;
+  font-size: 14px;
 }
 .notice > span {
-  font-size: 22px;
+  font-size: 24px;
   line-height: 1.25;
   flex-shrink: 0;
 }
@@ -1020,7 +1020,7 @@ main:focus {
   color: var(--burgundy);
 }
 .timeline small {
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 0.15em;
 }
 .timeline strong {
@@ -1029,7 +1029,7 @@ main:focus {
   font-weight: 400;
 }
 .timeline > button > span {
-  font-size: 10px;
+  font-size: 14px;
 }
 .timeline-story {
   display: grid;
@@ -1042,7 +1042,7 @@ main:focus {
 }
 .timeline-story > span {
   font-family: var(--serif);
-  font-size: 38px;
+  font-size: 40px;
   color: var(--gold);
 }
 .timeline-story h3 {
@@ -1101,11 +1101,11 @@ main:focus {
 }
 .gallery-grid figcaption strong {
   display: block;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
 }
 .gallery-grid figcaption > span {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--muted);
   display: block;
   line-height: 1.65;
@@ -1120,7 +1120,7 @@ main:focus {
   margin-bottom: 18px;
 }
 .text-panel p {
-  font-size: 13px;
+  font-size: 16px;
 }
 .concept-hero {
   background: #fff;
@@ -1134,7 +1134,7 @@ main:focus {
 }
 .concept-hero > span {
   display: block;
-  font-size: 9px;
+  font-size: 12px;
   color: var(--muted);
   margin-top: 20px;
 }
@@ -1142,7 +1142,7 @@ main:focus {
   margin-top: 40px;
 }
 .zoning p {
-  font-size: 12px;
+  font-size: 16px;
 }
 .callout {
   background: var(--sand);
@@ -1153,7 +1153,7 @@ main:focus {
   gap: 35px;
 }
 .callout h2 {
-  font-size: 36px;
+  font-size: 40px;
 }
 .chip-list {
   display: flex;
@@ -1165,7 +1165,7 @@ main:focus {
   border: 1px solid var(--line);
   border-radius: 2px;
   padding: 11px 20px;
-  font-size: 12px;
+  font-size: 14px;
   min-height: 44px;
 }
 .chip-list button.active,
@@ -1204,7 +1204,7 @@ main:focus {
 .day-tabs small {
   display: block;
   opacity: 0.7;
-  font-size: 10px;
+  font-size: 12px;
   margin-top: 4px;
 }
 .day-tabs strong {
@@ -1228,7 +1228,7 @@ label {
   display: flex;
   flex-direction: column;
   gap: 9px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--muted);
 }
@@ -1248,7 +1248,7 @@ textarea {
   min-height: 46px;
   border-radius: 0;
   padding: 10px 12px;
-  font-size: 12px;
+  font-size: 16px;
   width: 100%;
   max-width: 100%;
 }
@@ -1263,7 +1263,7 @@ textarea::placeholder {
   color: #827a6a;
 }
 .reset-button {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--burgundy);
   min-height: 46px;
   text-decoration: underline;
@@ -1273,11 +1273,11 @@ textarea::placeholder {
   justify-content: space-between;
   gap: 20px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 14px;
   margin-block: 24px;
 }
 .results-heading > span {
-  font-size: 9px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -1302,7 +1302,7 @@ textarea::placeholder {
   margin-top: 18px;
 }
 .calendar h2 {
-  font-size: 30px;
+  font-size: 32px;
   margin-bottom: 25px;
 }
 .calendar-grid {
@@ -1335,7 +1335,7 @@ textarea::placeholder {
   left: calc(50% - 2px);
 }
 .calendar p {
-  font-size: 10px;
+  font-size: 12px;
   margin-top: 20px;
   color: var(--muted);
 }
@@ -1356,10 +1356,10 @@ textarea::placeholder {
 }
 .event-detail-ticket > .eyebrow {
   color: var(--sand);
-  font-size: 8px;
+  font-size: 12px;
 }
 .event-detail-ticket > strong {
-  font-size: 120px;
+  font-size: 64px;
   font-family: var(--serif);
   font-weight: 400;
   line-height: 1.1;
@@ -1368,12 +1368,12 @@ textarea::placeholder {
   font-size: 16px;
 }
 .event-detail-ticket h2 {
-  font-size: 34px;
+  font-size: 32px;
   color: var(--milk);
   margin-block: 30px 20px;
 }
 .event-detail-ticket p {
-  font-size: 13px;
+  font-size: 16px;
 }
 .event-detail-ticket .ticket-barcode {
   margin-top: 30px;
@@ -1401,7 +1401,7 @@ dl > div {
   gap: 20px;
   padding: 17px 0;
   border-bottom: 1px solid var(--line);
-  font-size: 12px;
+  font-size: 14px;
 }
 dt {
   color: var(--muted);
@@ -1417,10 +1417,10 @@ dd a {
   padding-block: 30px;
 }
 .visit-facts h2 {
-  font-size: 34px;
+  font-size: 32px;
 }
 .visit-facts p {
-  font-size: 13px;
+  font-size: 16px;
 }
 .booklet {
   background: var(--burgundy);
@@ -1445,17 +1445,17 @@ dd a {
   color: var(--milk);
 }
 .booklet p {
-  font-size: 12px;
+  font-size: 16px;
   margin-block: 20px;
 }
 .booklet button {
   background: var(--milk);
   padding: 12px 25px;
   color: var(--burgundy);
-  font-size: 12px;
+  font-size: 14px;
 }
 .booklet small {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--sand);
   max-width: 230px;
   margin-top: 18px;
@@ -1469,7 +1469,7 @@ dd a {
   display: flex;
   justify-content: space-between;
   gap: 25px;
-  font-size: 14px;
+  font-size: 16px;
   padding: 22px 0;
 }
 .faq summary::-webkit-details-marker {
@@ -1483,7 +1483,7 @@ dd a {
   transform: rotate(45deg);
 }
 .faq details p {
-  font-size: 12px;
+  font-size: 16px;
   color: var(--muted);
   padding: 0 25px 25px 0;
 }
@@ -1530,13 +1530,13 @@ dd a {
   padding: 18px;
   background: #e1e5d5;
   color: #39472d;
-  font-size: 13px;
+  font-size: 14px;
 }
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 30px;
-  margin-block: 40px;
+  margin: 0 0 40px;
 }
 .product-image {
   padding: 25px;
@@ -1556,19 +1556,19 @@ dd a {
 .product-image > span {
   position: absolute;
   bottom: 12px;
-  font-size: 9px;
+  font-size: 12px;
   color: var(--muted);
 }
 .product-card > .eyebrow {
   margin-top: 25px;
-  font-size: 8px;
+  font-size: 12px;
 }
 .product-card h2 {
-  font-size: 34px;
+  font-size: 32px;
   margin-bottom: 20px;
 }
 .product-card > p {
-  font-size: 12px;
+  font-size: 16px;
   color: var(--muted);
 }
 .product-card > .text-link {
@@ -1608,13 +1608,13 @@ dd a {
   margin-bottom: 22px;
 }
 .modal-heading h2 {
-  font-size: 36px;
+  font-size: 40px;
 }
 .modal-heading button {
   width: 44px;
   height: 44px;
   flex-shrink: 0;
-  font-size: 30px;
+  font-size: 32px;
   border: 1px solid var(--line);
 }
 .lightbox-image {
@@ -1623,7 +1623,7 @@ dd a {
   object-fit: contain;
 }
 .modal-content > p {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
   margin-block: 15px;
 }
@@ -1635,12 +1635,13 @@ dd a {
   margin-top: 20px;
 }
 .gallery-controls > span {
-  font-size: 12px;
+  font-size: 14px;
 }
 @media (min-width: 1600px) {
   .hero {
-    max-width: 1600px;
-    margin: auto;
+    width: 100%;
+    max-width: none;
+    margin: 0;
   }
   .hero-copy {
     padding-left: 70px;
@@ -1659,10 +1660,10 @@ dd a {
   }
   .desktop-nav {
     gap: 15px;
-    font-size: 10px;
+    font-size: 14px;
   }
   .header-cta {
-    font-size: 9px;
+    font-size: 14px;
     padding: 12px;
   }
   .hero-copy {
@@ -1686,7 +1687,7 @@ dd a {
     height: 74px;
   }
   .quick-card h2 {
-    font-size: 21px;
+    font-size: 24px;
   }
   .quick-card > span {
     display: none;
@@ -1703,14 +1704,14 @@ dd a {
     min-width: 55px;
   }
   .event-card h3 {
-    font-size: 23px;
+    font-size: 24px;
   }
   .event-detail {
     gap: 40px;
     grid-template-columns: 300px 1fr;
   }
   .day-tabs strong {
-    font-size: 28px;
+    font-size: 32px;
   }
 }
 @media (max-width: 1050px) {
@@ -1719,7 +1720,7 @@ dd a {
   }
   .header-cta {
     margin-left: auto;
-    font-size: 11px;
+    font-size: 14px;
   }
   .menu-toggle {
     display: block;
@@ -1735,10 +1736,10 @@ dd a {
     padding-right: 12px;
   }
   .hero h1 {
-    font-size: clamp(35px, 4.3vw, 45px);
+    font-size: 48px;
   }
   .hero-subtitle {
-    font-size: 28px;
+    font-size: 32px;
   }
   .hero-image:after {
     background:
@@ -1746,10 +1747,10 @@ dd a {
       linear-gradient(0deg, #14181280, transparent 40%);
   }
   .hero-description {
-    font-size: 11px;
+    font-size: 16px;
   }
   .hero-side-note {
-    font-size: 13px;
+    font-size: 14px;
     right: 20px;
   }
   .quick-links {
@@ -1762,7 +1763,7 @@ dd a {
     height: 78px;
   }
   .quick-card h2 {
-    font-size: 26px;
+    font-size: 24px;
   }
   .quick-card > span {
     display: block;
@@ -1775,13 +1776,13 @@ dd a {
     grid-column: auto;
   }
   .hero-actions .text-link {
-    font-size: 10px;
+    font-size: 14px;
   }
   .hero-status {
-    font-size: 8px;
+    font-size: 12px;
   }
   .opening-banner h2 {
-    font-size: 34px;
+    font-size: 32px;
   }
   .gallery-image {
     height: 210px;
@@ -1809,17 +1810,17 @@ dd a {
     max-height: 180px;
   }
   .product-card h2 {
-    font-size: 28px;
+    font-size: 32px;
   }
   .day-tabs button {
     gap: 15px;
     padding: 20px;
   }
   .day-tabs strong {
-    font-size: 25px;
+    font-size: 24px;
   }
   .day-tabs button > span:first-child {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 @media (max-width: 780px) {
@@ -1837,13 +1838,13 @@ dd a {
     padding: 42px var(--gutter) 35px;
   }
   .hero h1 {
-    font-size: clamp(38px, 7vw, 60px);
+    font-size: 56px;
   }
   .hero-subtitle {
-    font-size: 31px;
+    font-size: 32px;
   }
   .hero-description {
-    font-size: 13px;
+    font-size: 16px;
     max-width: 500px;
   }
   .hero-image {
@@ -1864,19 +1865,19 @@ dd a {
   }
   .hero-status {
     margin-top: 25px;
-    font-size: 10px;
+    font-size: 12px;
   }
   .hero-actions {
     gap: 25px;
   }
   .hero-actions .text-link {
-    font-size: 12px;
+    font-size: 14px;
   }
   .photo-caption {
-    font-size: 9px;
+    font-size: 12px;
   }
   .project-bar {
-    font-size: 8px;
+    font-size: 12px;
     letter-spacing: 0.04em;
   }
   .project-bar > span:first-child {
@@ -1894,7 +1895,7 @@ dd a {
     width: 210px;
   }
   .header-cta {
-    font-size: 9px;
+    font-size: 14px;
     padding: 10px;
     gap: 9px;
   }
@@ -1915,14 +1916,14 @@ dd a {
     margin-top: 0;
   }
   .opening-days > p {
-    font-size: 12px;
+    font-size: 14px;
     gap: 10px;
   }
   .opening-banner > .button {
     grid-column: auto;
   }
   .opening-banner h2 {
-    font-size: 39px;
+    font-size: 40px;
   }
   .heritage-section {
     grid-template-columns: 1fr;
@@ -1938,7 +1939,7 @@ dd a {
     gap: 25px;
   }
   .three-col h3 {
-    font-size: 25px;
+    font-size: 24px;
   }
   .audience-grid {
     gap: 20px;
@@ -1950,7 +1951,7 @@ dd a {
     font-size: 32px;
   }
   .audience-grid .button {
-    font-size: 10px;
+    font-size: 14px;
     padding-inline: 15px;
     gap: 15px;
   }
@@ -1959,7 +1960,7 @@ dd a {
     grid-template-columns: 1fr;
   }
   .editorial-split .lead {
-    font-size: 19px;
+    font-size: 20px;
   }
   .editorial-image {
     max-height: 390px;
@@ -1968,10 +1969,10 @@ dd a {
     padding-block: 45px 30px;
   }
   .page-intro h1 {
-    font-size: 55px;
+    font-size: 48px;
   }
   .intro-text {
-    font-size: 15px;
+    font-size: 16px;
   }
   .page-content {
     padding-bottom: 60px;
@@ -1984,7 +1985,7 @@ dd a {
     padding: 20px;
   }
   .day-tabs strong {
-    font-size: 28px;
+    font-size: 32px;
     width: 100%;
     order: 2;
   }
@@ -2017,7 +2018,7 @@ dd a {
     justify-self: center;
   }
   .event-detail-ticket > strong {
-    font-size: 95px;
+    font-size: 64px;
   }
   .event-detail-ticket h2 {
     margin-block: 18px 15px;
@@ -2041,7 +2042,7 @@ dd a {
     padding: 20px;
   }
   .concept-hero > span {
-    font-size: 8px;
+    font-size: 12px;
   }
   .callout {
     flex-direction: column;
@@ -2082,7 +2083,7 @@ dd a {
     padding: 25px;
   }
   .timeline-story > span {
-    font-size: 30px;
+    font-size: 32px;
   }
   .modal {
     padding: 8px;
@@ -2092,10 +2093,10 @@ dd a {
     padding: 20px;
   }
   .modal-heading h2 {
-    font-size: 29px;
+    font-size: 32px;
   }
   .gallery-controls .button {
-    font-size: 10px;
+    font-size: 14px;
     padding: 10px 14px;
     min-height: 44px;
   }
@@ -2103,7 +2104,7 @@ dd a {
     gap: 30px;
   }
   .footer-brand {
-    font-size: 34px;
+    font-size: 40px;
   }
 }
 @media (max-width: 520px) {
@@ -2111,7 +2112,7 @@ dd a {
     --gutter: 20px;
   }
   body {
-    font-size: 13px;
+    font-size: 16px;
   }
   .site-header {
     height: 76px;
@@ -2131,19 +2132,19 @@ dd a {
     padding-top: 35px;
   }
   .hero h1 {
-    font-size: clamp(30px, 8.25vw, 43px);
+    font-size: 40px;
     letter-spacing: -0.03em;
     line-height: 1.1;
     margin-bottom: 20px;
   }
   .hero .eyebrow {
-    font-size: 8px;
+    font-size: 12px;
   }
   .hero-subtitle {
-    font-size: 28px;
+    font-size: 32px;
   }
   .hero-description {
-    font-size: 12px;
+    font-size: 16px;
     margin-top: 20px;
   }
   .hero-actions {
@@ -2153,11 +2154,11 @@ dd a {
     flex-direction: column;
   }
   .hero-actions .button {
-    font-size: 12px;
+    font-size: 14px;
     min-width: 180px;
   }
   .hero-status {
-    font-size: 8px;
+    font-size: 12px;
     line-height: 1.7;
   }
   .hero-image {
@@ -2166,14 +2167,14 @@ dd a {
   .hero-image-top {
     left: 20px;
     right: 20px;
-    font-size: 7px;
+    font-size: 12px;
   }
   .hero-side-note {
     font-size: 12px;
     right: 20px;
   }
   .photo-caption {
-    font-size: 7px;
+    font-size: 12px;
     right: 18px;
     left: 18px;
     text-align: right;
@@ -2193,18 +2194,18 @@ dd a {
   }
   .quick-monogram {
     line-height: 95px;
-    font-size: 57px;
+    font-size: 56px;
   }
   .quick-card h2 {
-    font-size: 25px;
+    font-size: 24px;
     margin: 6px 0;
     min-height: 52px;
   }
   .quick-card > div > span {
-    font-size: 6px;
+    font-size: 12px;
   }
   .quick-card p {
-    font-size: 9px;
+    font-size: 12px;
     line-height: 1.5;
   }
   .quick-card > span {
@@ -2220,18 +2221,18 @@ dd a {
     padding: 32px 22px;
   }
   .opening-banner h2 {
-    font-size: 34px;
+    font-size: 32px;
     max-width: 260px;
   }
   .opening-banner h2 em {
     display: block;
   }
   .opening-banner p {
-    font-size: 11px;
+    font-size: 16px;
     line-height: 1.6;
   }
   .opening-banner small {
-    font-size: 8px;
+    font-size: 12px;
   }
   .opening-days {
     display: grid;
@@ -2241,10 +2242,10 @@ dd a {
     font-size: 14px;
   }
   .opening-days small {
-    font-size: 8px;
+    font-size: 12px;
   }
   .opening-banner > .button {
-    font-size: 11px;
+    font-size: 14px;
     justify-self: stretch;
   }
   .section {
@@ -2257,15 +2258,15 @@ dd a {
     margin-bottom: 25px;
   }
   .section-heading h2 {
-    font-size: 36px;
+    font-size: 32px;
   }
   .section-heading .text-link {
-    font-size: 11px;
+    font-size: 14px;
     padding-block: 4px;
     gap: 30px;
   }
   .eyebrow {
-    font-size: 8px;
+    font-size: 12px;
     margin-bottom: 12px;
   }
   .event-grid,
@@ -2274,7 +2275,7 @@ dd a {
     gap: 22px;
   }
   .event-card h3 {
-    font-size: 27px;
+    font-size: 24px;
   }
   .event-body {
     padding: 22px;
@@ -2285,19 +2286,19 @@ dd a {
     padding-right: 15px;
   }
   .event-date strong {
-    font-size: 46px;
+    font-size: 48px;
   }
   .event-top {
     padding-inline: 22px;
   }
   .event-category {
-    font-size: 8px;
+    font-size: 12px;
   }
   .ticket-footer > span:first-child {
-    font-size: 10px;
+    font-size: 12px;
   }
   .card-status {
-    font-size: 9px;
+    font-size: 12px;
   }
   .heritage-section {
     gap: 32px;
@@ -2307,10 +2308,10 @@ dd a {
     transform: rotate(-1deg);
   }
   .heritage-section h2 {
-    font-size: 36px;
+    font-size: 32px;
   }
   .heritage-section p {
-    font-size: 13px;
+    font-size: 16px;
   }
   .space-card > a > img,
   .space-card .placeholder {
@@ -2320,20 +2321,20 @@ dd a {
     font-size: 32px;
   }
   .space-card-text .eyebrow {
-    font-size: 9px;
+    font-size: 12px;
   }
   .three-col {
     grid-template-columns: 1fr;
     gap: 30px;
   }
   .three-col h3 {
-    font-size: 30px;
+    font-size: 32px;
   }
   .directions {
     padding-block: 35px;
   }
   .directions h2 {
-    font-size: 35px;
+    font-size: 32px;
   }
   .directions .three-col > div {
     display: grid;
@@ -2341,18 +2342,18 @@ dd a {
     column-gap: 20px;
   }
   .directions .large-number {
-    font-size: 37px;
+    font-size: 40px;
     grid-row: 1/3;
     line-height: 1;
     margin: 0;
   }
   .directions .three-col h3 {
-    font-size: 28px;
+    font-size: 24px;
     margin-bottom: 10px;
   }
   .directions .three-col p {
     grid-column: 2;
-    font-size: 12px;
+    font-size: 16px;
   }
   .audience-grid {
     grid-template-columns: 1fr;
@@ -2362,13 +2363,13 @@ dd a {
     padding: 30px;
   }
   .audience-grid h2 {
-    font-size: 37px;
+    font-size: 32px;
   }
   .audience-grid p {
-    font-size: 13px;
+    font-size: 16px;
   }
   .audience-grid .button {
-    font-size: 11px;
+    font-size: 14px;
   }
   .footer-grid {
     grid-template-columns: 1fr;
@@ -2376,7 +2377,7 @@ dd a {
   }
   .footer-grid nav {
     gap: 13px 20px;
-    font-size: 12px;
+    font-size: 16px;
   }
   .footer-status {
     grid-column: auto;
@@ -2385,27 +2386,27 @@ dd a {
     flex-direction: column;
     gap: 10px;
     padding-right: 50px;
-    font-size: 8px;
+    font-size: 12px;
   }
   .site-footer {
     padding-top: 45px;
   }
   .footer-grid p {
-    font-size: 11px;
+    font-size: 12px;
   }
   .page-intro {
     padding-top: 38px;
   }
   .page-intro h1 {
-    font-size: 46px;
+    font-size: 48px;
     overflow-wrap: break-word;
   }
   .intro-text {
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 18px;
   }
   .notice {
-    font-size: 11px;
+    font-size: 14px;
     padding: 17px 15px;
     gap: 9px;
   }
@@ -2424,14 +2425,14 @@ dd a {
   }
   .timeline-story > span {
     display: block;
-    font-size: 28px;
+    font-size: 32px;
     margin-bottom: 17px;
   }
   .timeline-story h3 {
-    font-size: 29px;
+    font-size: 32px;
   }
   .timeline-story p {
-    font-size: 12px;
+    font-size: 16px;
   }
   .gallery-grid {
     grid-template-columns: 1fr;
@@ -2448,7 +2449,7 @@ dd a {
     height: 300px;
   }
   .gallery-grid figcaption > span {
-    font-size: 11px;
+    font-size: 12px;
   }
   .concept-hero {
     padding: 15px;
@@ -2460,7 +2461,7 @@ dd a {
     gap: 8px;
   }
   .chip-list button {
-    font-size: 10px;
+    font-size: 14px;
     padding: 9px 13px;
   }
   .day-tabs {
@@ -2473,20 +2474,20 @@ dd a {
     align-content: start;
   }
   .day-tabs button > span:first-child {
-    font-size: 11px;
+    font-size: 14px;
   }
   .day-tabs small {
     display: block;
     margin: 4px 0 0;
-    font-size: 9px;
+    font-size: 12px;
   }
   .day-tabs strong {
-    font-size: 26px;
+    font-size: 24px;
     line-height: 1.05;
     min-height: 55px;
   }
   .day-tabs button > span:last-child {
-    font-size: 17px;
+    font-size: 20px;
   }
   .filters {
     gap: 17px;
@@ -2497,7 +2498,7 @@ dd a {
   }
   .filters input,
   .filters select {
-    font-size: 12px;
+    font-size: 16px;
     min-height: 48px;
   }
   .reset-button {
@@ -2507,10 +2508,10 @@ dd a {
     padding: 35px 25px;
   }
   .event-description .lead {
-    font-size: 18px;
+    font-size: 20px;
   }
   .event-description h2 {
-    font-size: 36px;
+    font-size: 32px;
   }
   dl > div {
     grid-template-columns: 1fr;
@@ -2523,7 +2524,7 @@ dd a {
     padding: 23px 18px;
   }
   .resident-form-section form .button {
-    font-size: 11px;
+    font-size: 14px;
     padding-inline: 16px;
     gap: 15px;
   }
@@ -2540,13 +2541,13 @@ dd a {
     max-height: 230px;
   }
   .product-card h2 {
-    font-size: 35px;
+    font-size: 32px;
   }
   .product-card > p {
-    font-size: 13px;
+    font-size: 16px;
   }
   .product-card > .eyebrow {
-    font-size: 9px;
+    font-size: 12px;
   }
   .gallery-controls {
     flex-wrap: wrap;
@@ -2554,7 +2555,7 @@ dd a {
     gap: 10px;
   }
   .gallery-controls .button {
-    font-size: 9px;
+    font-size: 14px;
     padding: 10px;
     gap: 5px;
   }
@@ -2565,7 +2566,7 @@ dd a {
     gap: 15px;
   }
   .modal-heading h2 {
-    font-size: 29px;
+    font-size: 32px;
   }
   .modal-heading button {
     width: 40px;
@@ -2575,13 +2576,13 @@ dd a {
     padding-block: 65px 90px;
   }
   .not-found h1 {
-    font-size: 46px;
+    font-size: 48px;
   }
   .empty-state {
     padding: 55px 20px;
   }
   .callout h2 {
-    font-size: 34px;
+    font-size: 32px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

@@ -159,20 +159,67 @@ export function Header() {
     </>
   );
 }
+
 export function Footer() {
+  const socialLinks = [
+  { name: "Telegram", url: "" },
+  { name: "ВКонтакте", url: "" },
+  { name: "MAX", url: "" },
+  { name: "Яндекс Афиша", url: "" },
+  { name: "Кинопоиск", url: "" },
+];
+
   return (
+
     <footer className="site-footer">
       <div className="container footer-grid">
         <div>
-          <Link className="footer-brand" to="/">
-            Михайловское<span>История обретает новые кадры.</span>
+          <Link
+            className="footer-brand"
+            to="/"
+            aria-label="Кинорезиденция Михайловское — главная"
+          >
+            <img src={asset("brand.svg")} alt="" />
+            <span>
+              КИНОРЕЗИДЕНЦИЯ
+              <br />
+              МИХАЙЛОВСКОЕ
+            </span>
           </Link>
+          
           <p>
             Проект кинорезиденции
             <br />
             Хакатон «Наследие»
           </p>
+
+          {socialLinks.length > 0 && (
+            <div className="footer-socials">
+              <p className="footer-socials-title">
+                Мы на площадках
+              </p>
+              <div className="footer-socials-links">
+                {socialLinks.map((social) =>
+                  social.url ? (
+                    <a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {social.name} ↗
+                    </a>
+                  ) : (
+                    <span key={social.name}>
+                      {social.name}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
+          )}
         </div>
+
         <nav aria-label="Навигация в подвале">
           {navigation.map(([to, title]) => (
             <Link key={to} to={to}>
@@ -181,7 +228,7 @@ export function Footer() {
           ))}
         </nav>
         <div className="footer-status">
-          <span className="status-dot" /> Будущее начинается с сохранения
+          Будущее начинается с сохранения прошлого
           <p>
             Открытие планируется на 2030 год.
             <br />

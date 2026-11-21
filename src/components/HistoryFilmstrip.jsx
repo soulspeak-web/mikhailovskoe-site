@@ -69,8 +69,27 @@ export default function HistoryFilmstrip() {
               </button>
             </li>
           ))}
-        </ol>
+                </ol>
       </div>
+
+      <div className="reel-navigation">
+        <button
+          type="button"
+          onClick={() => move(-1)}
+          aria-label="Предыдущая карточка"
+        >
+          ← Назад
+        </button>
+
+        <button
+          type="button"
+          onClick={() => move(1)}
+          aria-label="Следующая карточка"
+        >
+          Вперед →
+        </button>
+      </div>
+
       <div className="reel-footnote">
         <span>МИХАЙЛОВСКОЕ / ИСТОРИЧЕСКАЯ ХРОНИКА</span>
         <span>XVIII век — настоящее время</span>

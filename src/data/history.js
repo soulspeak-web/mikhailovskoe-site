@@ -17,13 +17,13 @@ export const historySources = [
   },
 ];
 const images = [
-  "portrait-krechetnikov.webp",
-  "portrait-sergey.webp",
-  "portrait-sheremetev.webp",
-  "portrait-sultanov.webp",
-  "estate-painting.webp",
-  "sanatorium.webp",
-  "estate.webp",
+  "history/history-18c.png",
+  "history/history-1823.png",
+  "history/history-1870.png",
+  "history/history-1879.png",
+  "history/history-1838.jpg",
+  "history/history-1944.jpg",
+  "history/history-21c.jpg",
 ];
 const summaries = [
   "Начало архитектурно-паркового ансамбля на берегу Пахры.",
@@ -65,6 +65,10 @@ export const timeline = suppliedTimeline.map((entry, i) => ({
 }));
 export const people = suppliedPeople.map((p, i) => ({
   ...p,
-  image: images[[0, 2, 3][i]],
+  image: [
+    "portrait-krechetnikov.webp",
+    "portrait-sheremetev.webp",
+    "portrait-sultanov.webp",
+  ][i],
   source: historySources[i === 1 ? 2 : 0],
 }));
