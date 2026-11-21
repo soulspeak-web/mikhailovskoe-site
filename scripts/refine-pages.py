@@ -3,16 +3,16 @@ p=Path('src/pages/Pages.jsx');s=p.read_text(encoding='utf-8');a=s.index('export 
 s='import ProjectImage from "../components/ProjectImage";\nimport { EnquiryForm } from "../components/EnquiryForm";\n'+s
 s=s.replace('spaces, periods, galleries','spaces, galleries')
 needle='        <div className="concept-hero">'
-s=s.replace(needle,'''        <section className="editorial-split concept-introduction"><div><Eyebrow>Реставрация и новое использование</Eyebrow><h2>Бережное продолжение</h2><p className="lead">Театральная традиция Шереметевых стала отправной точкой для проекта кинорезиденции.</p><p>Для фасадов предлагается сохранить исторические слои и укрепить повреждённую штукатурку. Отдельные интерьеры планируется приспособить под кинозалы и общественные функции.</p><p>Главный корпус объединяет культурные и резидентские пространства. Во флигеле предусмотрено кафе с летней верандой, в парке — амфитеатр у белокаменной лестницы.</p></div><figure><ProjectImage src="estate-front.webp" className="editorial-image" alt="Существующее состояние усадьбы со стороны парка"/><figcaption>Существующее состояние · материалы проекта</figcaption></figure></section>
+s=s.replace(needle,'''        <section className="editorial-split concept-introduction"><div><Eyebrow>Реставрация и новое использование</Eyebrow><h2>Бережное продолжение</h2><p className="lead">Театральная традиция Шереметевых стала отправной точкой для проекта кинорезиденции.</p><p>Для фасадов предлагается сохранить исторические слои и укрепить повреждённую штукатурку. Отдельные интерьеры планируется приспособить под кинозалы и общественные функции.</p><p>Главный дом объединяет культурные и резидентские пространства. Во флигеле предусмотрено кафе, в парке — амфитеатр у белокаменной лестницы.</p></div><figure><ProjectImage src="estate-front.webp" className="editorial-image" alt="Существующее состояние усадьбы со стороны парка"/><figcaption>Существующее состояние · материалы проекта</figcaption></figure></section>
 ''' + needle)
 s=s.replace('src: "masterplan.webp",','src: "masterplan.webp", diagram: true,')
 s=s.replace('title="Территория и генеральный план" />','title="Территория и генеральный план" />\n<p className="section-deck">Геометрические аллеи регулярного парка переходят в дорожки пейзажной части. В проекте предусмотрены розарий, декоративный пруд и площадка для кинопоказов.</p>')
 needle='src: "masterplan.webp", diagram: true,'
 idx=s.index(needle);start=s.rfind('              {',0,idx)
 s=s[:start]+'''              {src:"park-plan.webp", title:"Генеральный план парка", caption:"Проектное предложение команды; не схема действующих маршрутов.", diagram:true},
-              {src:"zoning.webp", title:"Функциональное зонирование", caption:"Главный корпус · рабочая схема", diagram:true},
+              {src:"zoning.webp", title:"Функциональное зонирование", caption:"Главный дом · рабочая схема", diagram:true},
 '''+s[start:]
-s=s.replace('<img\n                className="editorial-image"\n                src={asset(space.image)}\n                alt="Главный корпус. Существующее состояние"\n              />','<figure><ProjectImage className="editorial-image" src={space.image} alt={`${space.title} · ${space.imageNote}`} /><figcaption>{space.imageNote}</figcaption></figure>')
+s=s.replace('<img\n                className="editorial-image"\n                src={asset(space.image)}\n                alt="Главный дом. Существующее состояние"\n              />','<figure><ProjectImage className="editorial-image" src={space.image} alt={`${space.title} · ${space.imageNote}`} /><figcaption>{space.imageNote}</figcaption></figure>')
 s=s.replace('<p className="lead">{space.description}</p>','<p className="lead">{space.detail || space.description}</p>')
 s=s.replace('"Точное размещение уточняется"','space.location || "Точное размещение уточняется"')
 a=s.index('          {slug === "main" ? (');b=s.index('        </section>',a)

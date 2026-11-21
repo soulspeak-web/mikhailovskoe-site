@@ -2,6 +2,7 @@ import ProjectImage from "./ProjectImage";
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { asset, navigation } from "../data/content";
+import "../space-card-banners.css";
 export function Arrow() {
   return <span aria-hidden="true">↗</span>;
 }
@@ -406,11 +407,55 @@ export function EventCard({ event }) {
     </article>
   );
 }
+
+
+const spaceBannerLabels = {
+  chronicle: "Выставки",
+  goncharov: "Мастерские",
+  krechetnikov: "Мастерские",
+  flicker: "Кинозалы",
+  rakurs: "Кинозалы",
+  spectrum: "Кинозалы",
+  obscura: "Кинозалы",
+  photon: "Залы",
+  sheremetev: "Залы",
+  frame: "Библиотека",
+  intermission: "Кофейня",
+};
+
+
 export function SpaceCard({ space, showImageCredit = true }) {
+  const hasLogoBanner =
+    Number(space.number) >= 4 &&
+    Number(space.number) <= 14 &&
+    Boolean(space.image);
+
   return (
     <article className="space-card">
       <Link to={`/spaces/${space.slug}`} tabIndex={-1} aria-hidden="true">
-        {space.image ? (
+        {hasLogoBanner ? (
+          <div className="space-logo-cover">
+            <div className="space-logo-cover__inner">
+              <div className="space-logo-cover__copy">
+                <span className="space-logo-cover__title">
+                  {spaceBannerLabels[space.slug] || space.category}
+                </span>
+                <span className="space-logo-cover__note">
+                  Проектное пространство
+                </span>
+              </div>
+              <span className="space-logo-cover__number" aria-hidden="true">
+                {space.number}
+              </span>
+              <img
+                className="space-logo-cover__graphic"
+                src={asset(space.image)}
+                alt=""
+                loading="lazy"
+              />
+            </div>
+          </div>
+        ) : space.image ? (
           <ProjectImage
             src={space.image}
             alt=""
@@ -428,29 +473,7 @@ export function SpaceCard({ space, showImageCredit = true }) {
         {space.imageNote && (
           <small className="image-status">{space.imageNote}</small>
         )}
-        {showImageCredit && space.slug === "park" && (
-          <details className="image-credit">
-            <summary>О фотографии</summary>
-            <p>
-              ЛЮБИТЕль ·{" "}
-              <a
-                href="https://creativecommons.org/licenses/by-sa/4.0/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                CC BY-SA 4.0
-              </a>
-              . Кадрирование и уменьшение для сайта.{" "}
-              <a
-                href="https://commons.wikimedia.org/wiki/File:Аллея_парка_в_Михайловском.jpg"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Оригинал фотографии ↗
-              </a>
-            </p>
-          </details>
-        )}
+     
         <span className="eyebrow">
           {space.number} / {space.category}
         </span>
@@ -464,6 +487,7 @@ export function SpaceCard({ space, showImageCredit = true }) {
     </article>
   );
 }
+
 export function FAQ({ items }) {
   return (
     <div className="faq">

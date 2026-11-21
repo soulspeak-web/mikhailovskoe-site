@@ -1,0 +1,277 @@
+/* Интерактивный генеральный план */
+.park-interactive {
+  margin-top: 24px;
+}
+
+.park-interactive-intro {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.park-interactive-intro p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.park-interactive-intro > span {
+  color: #762b30;
+  font-size: 12px;
+  letter-spacing: .12em;
+  white-space: nowrap;
+}
+
+.park-interactive-scroll {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background: #f1ede5;
+  border: 1px solid #e5d9c9;
+}
+
+.park-interactive-stage {
+  position: relative;
+  width: 100%;
+  min-width: 780px;
+}
+
+.park-interactive-stage > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2048 / 1509;
+  object-fit: contain;
+}
+
+/* Интерактивные точки на карте */
+.park-interactive-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border: 2px solid #fff9ef;
+  background: #702931;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px #2a1d1b40;
+  font: 600 12px/1 Arial, sans-serif;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform .2s ease, background .2s ease;
+  padding: 0;
+  z-index: 1;
+}
+
+.park-interactive-pin:hover,
+.park-interactive-pin:focus-visible {
+  transform: translate(-50%, -50%) scale(1.18);
+  background: #a34549;
+  z-index: 2;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Список пространств */
+.park-interactive-legend {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 20px;
+  margin-top: 24px;
+}
+
+.park-interactive-legend-item {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ded1c1;
+  text-align: left;
+  cursor: pointer;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  font: inherit;
+  font-size: 15px;
+}
+
+.park-interactive-legend-item > span:first-child {
+  color: #812e34;
+  font-size: 12px;
+  letter-spacing: .05em;
+}
+
+.park-interactive-arrow {
+  color: #812e34;
+  margin-left: auto;
+  font-size: 18px;
+}
+
+.park-interactive-legend-item:hover {
+  color: #812e34;
+}
+
+.park-interactive-note {
+  margin: 14px 0 0;
+  color: #7c756a;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Затемнение при открытии визуализации */
+.park-preview-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 20, 17, .82);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+/* Широкое бежевое окно */
+.park-preview-dialog {
+  width: min(820px, 100%);
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  box-sizing: border-box;
+  background: #f9f6f0;
+  border: none;
+  box-shadow: 0 18px 80px #0005;
+}
+
+
+.park-preview-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 30px 12px;
+  color: #7d3335;
+  font-size: 12px;
+  letter-spacing: .1em;
+}
+
+
+/* Крестик без декоративной рамки */
+.park-preview-close {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  background: transparent;
+  color: #7d3335;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  appearance: none;
+}
+
+.park-preview-close:hover {
+  color: #a34549;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.park-preview-close:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.park-preview-close:focus-visible {
+  outline: 2px solid #7d3335;
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+/* Фотография меньше окна, строго по центру с бежевыми полями */
+.park-preview-dialog > img {
+  display: block;
+  width: min(600px, calc(100% - 64px));
+  max-width: 600px;
+  height: auto;
+  max-height: 68dvh;
+  object-fit: contain;
+  margin: 24px auto 28px;
+  background: transparent;
+}
+
+/* Подпись выровнена по левому краю фотографии */
+.park-preview-bottom {
+  box-sizing: border-box;
+  width: min(600px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 0 0 18px;
+  padding-bottom: 32px;
+}
+
+.park-preview-bottom h3 {
+  font-size: 28px;
+  margin: 0 0 5px;
+  color: #702931;
+}
+
+.park-preview-bottom p {
+  margin: 0;
+  font-size: 13px;
+  color: #7c756a;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 760px) {
+  .park-interactive-intro {
+    display: block;
+  }
+
+  .park-interactive-intro > span {
+    display: block;
+    margin-top: 9px;
+  }
+
+  .park-interactive-legend {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .park-interactive-legend-item {
+    font-size: 13px;
+  }
+
+  .park-preview-dialog {
+    width: 100%;
+  }
+
+  .park-preview-topbar {
+    padding: 6px 10px;
+  }
+
+  .park-preview-dialog > img,
+  .park-preview-bottom {
+    width: calc(100% - 32px);
+  }
+
+  .park-preview-bottom h3 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .park-interactive-legend {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .park-interactive-pin {
+    transition: none;
+  }
+}

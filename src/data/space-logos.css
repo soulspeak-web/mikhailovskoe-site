@@ -1,0 +1,12 @@
+/* Оформление только логотипов на карточках пространств.
+   Позволяет показывать PNG без обрезки, поверх кремовой подложки. */
+.space-grid img[src*="space-logos/"] {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: #f4eee3;
+  padding: clamp(18px, 3vw, 40px);
+  box-sizing: border-box;
+}

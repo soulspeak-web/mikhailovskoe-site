@@ -1,3 +1,5 @@
+import ParkRoutes from "../components/ParkRoutes";
+import ParkMap from "../components/ParkMap";
 import ShopCatalog from "../components/ShopCatalog";
 import "../shop-catalog.css";
 import ProjectImage from "../components/ProjectImage";
@@ -28,7 +30,7 @@ export function Concept() {
           <div>
             <Eyebrow>Реставрация и новое использование</Eyebrow>
             <h1>Бережное продолжение</h1>
-            <p className="lead">
+            <p>
               Театральная традиция Шереметевых стала отправной точкой для
               проекта кинорезиденции.
             </p>
@@ -37,8 +39,8 @@ export function Concept() {
               поврежденную штукатуркуи адаптировать часть интерьеров под кинозалы и общественные пространства.
             </p>
             <p>
-              Главный корпус объединяет культурные и резидентские пространства.
-              Во флигеле предусмотрено кафе с летней верандой, в парке —
+              Главный дом объединяет культурные и резидентские пространства.
+              Во флигеле предусмотрено кафе, в парке —
               амфитеатр у белокаменной лестницы.
             </p>
           </div>
@@ -76,13 +78,57 @@ export function Concept() {
             </div>
           ))}
         </section>
-        <section className="section">
-          <SectionHeading
-            label="Архитектурная идея"
-            title="От объема к пространству"
-          />
-          <Gallery items={galleries.concept} />
-        </section>
+        
+<section className="section concept-architecture">
+  <SectionHeading
+    label="Архитектурная идея"
+    title="Архитектурные решения"
+  />
+
+  <div className="architecture-solutions">
+    <div>
+      <Eyebrow>01 / Главное здание</Eyebrow>
+      <h3>Главный дом</h3>
+      <p>
+        В главном доме планируется разместить кинозалы,
+        мастерские, библиотеку и пространства для резидентов.
+        Проектные решения предусматривают сохранение
+        исторических особенностей здания.
+      </p>
+    </div>
+
+    <div>
+      <Eyebrow>02 / Часть ансамбля</Eyebrow>
+      <h3>Флигель</h3>
+      <p>
+        После реставрации во флигеле предусмотрено
+        размещение кафе для посетителей и резидентов.
+        Новая функция будет адаптирована к историческому
+        облику здания.
+      </p>
+    </div>
+  </div>
+
+  <figure className="architecture-plan">
+    <a
+      href={asset("main-house-zoning.jpg")}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Открыть схему главного дома"
+    >
+      <img
+        src={asset("main-house-zoning.jpg")}
+        alt="Схема функционального зонирования главного дома"
+        loading="lazy"
+      />
+    </a>
+    <figcaption>
+      Главный дом. Функциональное зонирование.
+      Нажмите на схему для увеличения.
+    </figcaption>
+  </figure>
+</section>
+
         <section className="section concept-territory">
           <SectionHeading title="Территория и генеральный план" />
           <p className="section-deck">
@@ -91,28 +137,9 @@ export function Concept() {
             для кинопоказов.
           </p>
 
-          <Gallery
-            items={[
-              {
-                src: "park-plan.webp",
-                title: "Генеральный план парка",
-                cardCaption: "Аллеи, ландшафт и открытые площадки",
-                diagram: true,
-              },
-              {
-                src: "zoning.webp",
-                title: "Функциональное зонирование",
-                caption: "Главный корпус · рабочая схема",
-                diagram: true,
-              },
-              {
-                src: "masterplan.webp",
-                diagram: true,
-                title: "Схема территории",
-                cardCaption: "Ансамбль и его окружение",
-              },
-            ]}
-          />
+          
+<ParkMap />
+
           <div className="three-col zoning">
             {spaces.slice(0, 3).map((s) => (
               <div key={s.slug}>
@@ -173,76 +200,152 @@ export function Spaces() {
     </>
   );
 }
+
 export function SpaceDetail() {
   const { slug } = useParams();
   const space = spaces.find((s) => s.slug === slug);
+
   if (!space) return <NotFound />;
+
+  const isMainHouse = slug === "main";
+
   const events = openingEvents.filter(
     (e) =>
       e.venue.includes(space.title) ||
       e.venue.includes(space.title.replace("Зал", "зал")) ||
       (slug === "park" && e.venue.includes("Парк")),
   );
+
   return (
     <>
-      <PageIntro number={`Пространство ${space.number}`} title={space.title}>
+      <PageIntro
+        number={`Пространство ${space.number}`}
+        title={space.title}
+      >
         {space.description}
       </PageIntro>
+
       <div className="container page-content">
         <Link className="text-link back-link" to="/spaces">
           ← Все пространства
         </Link>
-        <div className="editorial-split">
-          <div>
-            {space.image ? (
-              <figure>
-                <ProjectImage
-                  className="editorial-image"
-                  src={space.image}
-                  alt={`${space.title} · ${space.imageNote}`}
-                />
-                <figcaption>{space.imageNote}</figcaption>
-              </figure>
-            ) : (
-              <Placeholder label="Фото / визуализация пространства · материал уточняется" />
-            )}
-          </div>
+
+        <div
+          className={`editorial-split ${
+            isMainHouse ? "main-detail-intro" : ""
+          }`}
+        >
+{slug === "park" && <ParkRoutes />}
+
+{slug === "wing" && (
+  <figure className="wing-detail-plan">
+    <a
+      href={asset("wing-zoning.jpg")}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Открыть трехмерную схему флигеля"
+    >
+      <img
+        src={asset("wing-zoning.jpg")}
+        alt="Трехмерная схема функционального зонирования флигеля"
+        loading="lazy"
+      />
+    </a>
+
+    <figcaption>
+      Флигель. Трехмерная схема функционального зонирования.
+      Нажмите для увеличения.
+    </figcaption>
+  </figure>
+)}
+
+
+          {!isMainHouse && (
+            <div>
+              {space.image ? (
+                <figure>
+                  <ProjectImage
+                    className="editorial-image"
+                    src={space.image}
+                    alt={`${space.title} · ${space.imageNote || ""}`}
+                  />
+                  <figcaption>{space.imageNote}</figcaption>
+                </figure>
+              ) : (
+                <Placeholder label="Фото / визуализация пространства · материал уточняется" />
+              )}
+            </div>
+          )}
+
           <div>
             <Eyebrow>{space.category}</Eyebrow>
             <h2>Место будущих встреч</h2>
-            <p className="lead">{space.detail || space.description}</p>
+
+            <p className="lead">
+              {space.detail || space.description}
+            </p>
+
             <dl>
               <div>
                 <dt>Статус</dt>
                 <dd>Проектное предложение</dd>
               </div>
+
               <div>
                 <dt>Расположение</dt>
                 <dd>
                   {slug === "main"
-                    ? "Главный корпус ансамбля"
+                    ? "Главный дом ансамбля"
                     : slug === "wing"
                       ? "Флигель ансамбля"
                       : slug === "park"
                         ? "Территория усадьбы"
-                        : space.location || "Точное размещение уточняется"}
+                        : space.location ||
+                          "Точное размещение уточняется"}
                 </dd>
               </div>
+
               <div>
                 <dt>Оснащение и вместимость</dt>
-                <dd>Будут определены после согласования проекта</dd>
+                <dd>
+                  Будут определены после согласования проекта
+                </dd>
               </div>
             </dl>
           </div>
         </div>
+
+        {isMainHouse && (
+          <figure className="main-house-detail-plan">
+            <a
+              href={asset("main-house-zoning.jpg")}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Открыть схему главного дома в полном размере"
+            >
+              <img
+                src={asset("main-house-zoning.jpg")}
+                alt="Трехмерная схема функционального зонирования главного дома"
+                loading="lazy"
+              />
+            </a>
+
+            <figcaption>
+              Главный дом. Функциональное зонирование.
+              Нажмите для увеличения.
+            </figcaption>
+          </figure>
+        )}
+
         <section className="section">
           <SectionHeading
             title={
-              slug === "main"
+              isMainHouse
                 ? "Виды и архитектурные материалы"
                 : "Галерея пространства"
             }
           />
+
           {space.gallery?.length ? (
             <Gallery
               items={space.gallery}
@@ -254,6 +357,7 @@ export function SpaceDetail() {
             <Placeholder label="Нужны план помещения и фотографии пространства" />
           )}
         </section>
+
         {events.length > 0 && (
           <section className="section">
             <SectionHeading
@@ -261,6 +365,7 @@ export function SpaceDetail() {
               to="/events?program=opening"
               linkText="Вся программа"
             />
+
             <div className="event-grid">
               {events.map((e) => (
                 <EventCard event={e} key={e.id} />
@@ -272,6 +377,7 @@ export function SpaceDetail() {
     </>
   );
 }
+
 export function Visit() {
   return (
     <>

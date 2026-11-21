@@ -1,0 +1,87 @@
+/* Верхние баннеры пространств 04–14 — без влияния на фото 01–03 */
+.space-card > a .space-logo-cover {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 210px;
+  padding: 12px;
+  background: #f4eee3;
+  overflow: hidden;
+}
+
+.space-card > a .space-logo-cover__inner {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ded4c3;
+  background: #f3ede1;
+  display: flex;
+  align-items: center;
+  padding: 18px 20px;
+  overflow: hidden;
+}
+
+.space-card > a .space-logo-cover__copy {
+  position: relative;
+  z-index: 2;
+  width: 52%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.space-card > a .space-logo-cover__title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(19px, 1.5vw, 26px);
+  line-height: 1.14;
+  font-weight: 400;
+  color: #86745d;
+}
+
+.space-card > a .space-logo-cover__note {
+  color: #938777;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.space-card > a .space-logo-cover__number {
+  display: none;
+}
+
+/* Более специфичный селектор перекрывает старые правила для img */
+.space-card > a .space-logo-cover img.space-logo-cover__graphic {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 42%;
+  height: 72%;
+  max-width: none;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  z-index: 1;
+}
+
+@media (max-width: 760px) {
+  .space-card > a .space-logo-cover {
+    height: 200px;
+  }
+
+  .space-card > a .space-logo-cover__title {
+    font-size: 23px;
+  }
+
+  .space-card > a .space-logo-cover__number {
+    font-size: 60px;
+  }
+}

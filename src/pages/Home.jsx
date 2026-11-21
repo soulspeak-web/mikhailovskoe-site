@@ -1,5 +1,4 @@
 import ProjectImage from "../components/ProjectImage";
-import { Link } from "react-router-dom";
 import { asset, spaces } from "../data/content";
 import { openingEvents } from "../data/events";
 import {
@@ -14,6 +13,7 @@ import {
 export default function Home() {
   return (
     <>
+    
       <section className="hero">
         <div className="hero-copy">
           <Eyebrow>Кино. Культура. Наследие.</Eyebrow>
@@ -40,86 +40,52 @@ export default function Home() {
             </Button>
           </div>
           <div className="hero-status">
-            <span className="status-dot" /> Проект кинорезиденции · Открытие не
-            ранее 2030
+            <span className="status-dot" />
+            Проект кинорезиденции · Открытие не ранее 2030
           </div>
         </div>
+        
         <div className="hero-image">
           <ProjectImage
             eager
-            src="estate.webp"
-            alt="Главный корпус усадьбы Михайловское в существующем состоянии"
+            src="hero-estate-wide-rec.png"
+            alt="Усадьба Михайловское в осеннем парке"
             fetchPriority="high"
           />
         </div>
       </section>
-      <div className="container">
-        <section className="audience-grid audience-entry">
-          <div>
-            <Eyebrow>Открыть для себя</Eyebrow>
-            <h2>Я — посетитель</h2>
-            <p>
-              Будущие экскурсии, культурная программа и знакомство с
-              территорией.
-            </p>
-            <Button to="/visit" secondary>
-              Спланировать знакомство
-            </Button>
-          </div>
-          <div>
-            <Eyebrow>Стать частью истории</Eyebrow>
-            <h2>Я — кинорезидент</h2>
-            <p>
-              Пространства для творчества, профессионального общения и новых
-              идей.
-            </p>
-            <Button to="/residents" secondary>
-              О возможностях
-            </Button>
-          </div>
-        </section>
-        <div className="quick-links">
-          {[
-            [
-              "/history",
-              "01",
-              "История усадьбы",
-              "Люди, события, наследие",
-              "archive-main.webp",
-            ],
-            [
-              "/concept",
-              "02",
-              "Концепция проекта",
-              "Сохранение и новая жизнь",
-              "facades.webp",
-            ],
-            [
-              "/spaces",
-              "03",
-              "Пространства",
-              "Места будущих встреч",
-              "archive-hall.webp",
-            ],
-          ].map(([to, n, t, d, img]) => (
-            <Link className="quick-card" to={to} key={to}>
-              {img ? (
-                <ProjectImage src={img} alt="" sizes="180px" />
-              ) : (
-                <div className="quick-monogram" aria-hidden="true">
-                  М
-                </div>
-              )}
-              <div>
-                <span>{n} / ИССЛЕДОВАТЬ</span>
-                <h2>{t}</h2>
-                <p>{d}</p>
-              </div>
-              <Arrow />
-            </Link>
-          ))}
-        </div>
-        <OpeningBanner />
+
+    
+<div className="container home-content">
+  <OpeningBanner />
+
+  <section className="audience-grid audience-entry">
+    <div>
+      <Eyebrow>Открыть для себя</Eyebrow>
+      <h2>Я — посетитель</h2>
+      <p>
+        Будущие экскурсии, культурная программа и знакомство с
+        территорией.
+      </p>
+      <Button to="/visit" secondary>
+        Спланировать знакомство
+      </Button>
+    </div>
+    <div>
+      <Eyebrow>Стать частью истории</Eyebrow>
+      <h2>Я — кинорезидент</h2>
+      <p>
+        Пространства для творчества, профессионального общения и новых
+        идей.
+      </p>
+      <Button to="/residents" secondary>
+        О возможностях
+      </Button>
+    </div>
+  </section>
+
+        
+      
         <section className="section">
           <SectionHeading
             label="Следующий кадр"
@@ -155,9 +121,10 @@ export default function Home() {
               <em>началом нового.</em>
             </h2>
             <p>
-              Архитектура хранит память о людях и времени. Концепция
-              «Михайловского» предлагает бережно сохранить эту память и дать
-              историческим пространствам новую культурную функцию.
+                Архитектура хранит память о людях и времени. Концепция
+                кинорезиденции «Михайловское» предлагает бережно сохранить
+                эту память и дать историческим пространствам новую
+                культурную функцию.
             </p>
             <p>
               Кинопоказы, творческие мастерские, исследования и встречи —
@@ -185,7 +152,7 @@ export default function Home() {
                   ...space,
                   description: {
                     main: "Кинозалы, мастерские и места встреч в историческом доме.",
-                    wing: "Кафе с летней верандой в отдельном здании ансамбля.",
+                    wing: "Кафе в здании ансамбля «Усадьба Михайловское, XVIII в.».",
                     park: "Прогулки, экскурсии и кино под открытым небом.",
                   }[space.slug],
                   imageNote:

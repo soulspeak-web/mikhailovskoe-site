@@ -24,10 +24,16 @@ export default function History() {
           hideCardSources
         />
       </section>
-      <section className="section">
+      
+      <section className="section estate-today">
         <SectionHeading title="Усадьба сегодня" />
-        <Gallery items={galleries.current} hideCardCaptions hideCardSources />
+        <Gallery
+          items={galleries.current}
+          hideCardCaptions
+          hideCardSources
+        />
       </section>
+
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import { spaceLogos } from "./spaceLogos.js";
 import { projectSpaces, spaceImages } from "./projectSpaces.js";
 export const asset = (name) => `${import.meta.env.BASE_URL}assets/${name}`;
 export const navigation = [
@@ -85,7 +86,7 @@ export const regularEvents = [
 const rows = [
   [
     "main",
-    "Главный корпус",
+    "Главный дом",
     "Объекты",
     "Общественные культурные зоны, кинозалы, мастерские и резидентские пространства.",
     "estate.webp",
@@ -94,7 +95,7 @@ const rows = [
     "wing",
     "Флигель",
     "Объекты",
-    "Отдельная часть ансамбля. В проекте рассматривается функция кафе; связь с кофейней «Антракт» уточняется.",
+    "Часть ансамбля «Усадьба Михайловское, XVIII в.», после реставрации которой здесь предусмотрено разместить кафе.",
     null,
   ],
   [
@@ -205,18 +206,24 @@ export const spaces = rows.map(
       slug,
       title,
       category,
-      description: project?.summary || description,
+      
+description: ["flicker", "rakurs", "spectrum", "obscura"].includes(slug)
+  ? "Кинопоказы, лекции, дискуссии"
+  : project?.summary || description,
+
       detail: project?.detail,
       location: project?.location,
       gallery,
+      
       image:
         slug === "main"
-          ? "estate.webp"
+          ? "02_Экстерьер.jpg"
           : slug === "wing"
-            ? "wing-concept.webp"
+            ? "Экстерьер Флигель (1).jpg"
             : slug === "park"
               ? "park.webp"
-              : null,
+              : spaceLogos[slug] ?? null,
+
       imageNote:
         slug === "wing"
           ? "Проектная визуализация"
@@ -240,7 +247,7 @@ export const galleries = {
     },
     {
       src: "archive-main.webp",
-      title: "Главный корпус. Архивный вид",
+      title: "Главный дом. Архивный вид",
       caption:
         "Архивное фото из материалов Figma. Дата, автор и источник уточняются.",
     },
@@ -268,7 +275,7 @@ export const galleries = {
   current: [
     {
       src: "estate.webp",
-      title: "Главный корпус",
+      title: "Главный дом",
       caption:
         "Фото существующего состояния из Figma. Автор и дата уточняются.",
     },
@@ -277,10 +284,6 @@ export const galleries = {
       title: "Вид со стороны парка",
       caption: "Фото существующего состояния из материалов проекта.",
     },
-    {
-      src: "detail.webp",
-      title: "Архитектурные детали",
-      caption: "Фотофиксация из Figma. Дата и автор уточняются.",
-    },
+  
   ],
 };
