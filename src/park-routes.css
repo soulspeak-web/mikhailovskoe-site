@@ -207,3 +207,49 @@
 @media (prefers-reduced-motion: reduce) {
   .estate-park-routes__dialog { animation: none; }
 }
+
+/* PARK-SIZE-RESPONSIVE-2026-11 */
+/* Сохраняем всю интерактивную карту и ее маркеры в одном масштабе.
+   На широких экранах карта не растягивается до огромного размера. */
+.park-space-detail .estate-park-routes {
+  position: static;
+  left: auto;
+  transform: none;
+  width: min(980px, 100%);
+  max-width: 100%;
+  margin: 38px auto 58px;
+}
+
+/* Картинка остается внутри масштабируемого блока: координаты маркеров не съезжают. */
+.park-space-detail .estate-park-routes__map-scroll {
+  width: 100%;
+}
+.park-space-detail .estate-park-routes__map {
+  width: 100% !important;
+}
+.park-space-detail .estate-park-routes__plan {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+}
+
+/* На невысоких экранах немного компактнее. */
+@media (max-height: 800px) and (min-width: 761px) {
+  .park-space-detail .estate-park-routes { width: min(880px, 100%); }
+}
+
+/* На телефоне карта доступна с горизонтальной прокруткой для читаемости точек. */
+@media (max-width: 760px) {
+  .park-space-detail .estate-park-routes {
+    width: 100%;
+    margin: 28px auto 40px;
+  }
+  .park-space-detail .estate-park-routes__map-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .park-space-detail .estate-park-routes__map {
+    min-width: 700px !important;
+  }
+}
