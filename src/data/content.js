@@ -178,7 +178,7 @@ const rows = [
   [
     "intermission",
     "Кофейня «Антракт»",
-    "Общественные пространства",
+    "Гостроиндустрия",
     "Место для паузы и неформальных встреч. Размещение во флигеле требует сверки.",
     null,
   ],
@@ -236,6 +236,40 @@ description: ["flicker", "rakurs", "spectrum", "obscura"].includes(slug)
     };
   },
 );
+// MIKHAILOVSKOE_GASTRONOMY_CARDS_2026
+// Два отдельных гастрономических пространства главного дома.
+const intermissionSpace = spaces.find((item) => item.slug === "intermission");
+if (intermissionSpace) {
+  intermissionSpace.category = "Гостроиндустрия";
+  intermissionSpace.location = "Главный дом ансамбля, 2 этаж";
+  intermissionSpace.capacity = 6;
+  intermissionSpace.equipment = "Кофе, чай, места для отдыха";
+  intermissionSpace.description = "Кофейня для кофе, чая и коротких встреч между событиями.";
+  intermissionSpace.detail =
+    "Кофейня «Антракт» предусмотрена на втором этаже главного дома. " +
+    "Вместимость — 6 человек. В проекте предусмотрены кофе, чай и места для отдыха.";
+}
+
+if (!spaces.some((item) => item.slug === "cafe")) {
+  spaces.push({
+    slug: "cafe",
+    number: "15",
+    title: "Кафе",
+    category: "Гостроиндустрия",
+    description: "Кафе с обеденными столиками и местами для отдыха в главном доме.",
+    detail:
+      "На первом этаже главного дома предусмотрено кафе на 39 человек. " +
+      "В проекте запланированы обеденные столики с диванчиками. " +
+      "Представленная визуализация показывает проектное предложение.",
+    location: "Главный дом ансамбля, 1 этаж",
+    capacity: 39,
+    equipment: "Обеденные столики с диванчиками",
+    image: "cafe-interior.webp",
+    imageNote: "Проектная визуализация интерьера",
+    gallery: [],
+  });
+}
+
 export const galleries = {
   history: [
     {

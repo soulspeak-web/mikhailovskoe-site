@@ -1,3 +1,4 @@
+import "../gastro-cards.css";
 import ProjectImage from "./ProjectImage";
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
@@ -433,6 +434,24 @@ export function SpaceCard({ space, showImageCredit = true }) {
   return (
     <article className="space-card">
       <Link to={`/spaces/${space.slug}`} tabIndex={-1} aria-hidden="true">
+        {space.slug === "cafe" ? (
+          <div className="gastro-cafe-banner">
+            <div className="gastro-cafe-banner__inner">
+              <div className="gastro-cafe-banner__copy">
+                <span className="gastro-cafe-banner__title">Кафе</span>
+                <span className="gastro-cafe-banner__note">Проектное пространство</span>
+              </div>
+              <img
+                className="gastro-cafe-banner__icon"
+                src={asset("cafe-symbol.svg")}
+                alt=""
+                loading="lazy"
+              />
+            </div>
+          </div>
+        ) : (
+          <>
+
         {hasLogoBanner ? (
           <div className="space-logo-cover">
             <div className="space-logo-cover__inner">
@@ -468,9 +487,11 @@ export function SpaceCard({ space, showImageCredit = true }) {
             <small>Проектное пространство · фото готовится</small>
           </div>
         )}
+                </>
+        )}
       </Link>
       <div className="space-card-text">
-        {space.imageNote && (
+        {space.imageNote && space.slug !== "cafe" && (
           <small className="image-status">{space.imageNote}</small>
         )}
      

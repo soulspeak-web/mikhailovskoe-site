@@ -186,17 +186,22 @@ export function SpaceDetail() {
         {space.description}
       </PageIntro>
 
-      <div className="container page-content">
+      <div className={[
+        "container page-content",
+        slug === "cafe" && "cafe-detail-page",
+        slug === "park" && "park-space-detail",
+      ].filter(Boolean).join(" ")}>
         <Link className="text-link back-link" to="/spaces">
           ← Все пространства
         </Link>
+        {slug === "park" && <ParkRoutes />}
 
         <div
           className={`editorial-split ${
             isMainHouse ? "main-detail-intro" : ""
           }`}
         >
-{slug === "park" && <ParkRoutes />}
+
 
 {slug === "wing" && (
   <figure className="wing-detail-plan">
@@ -225,10 +230,10 @@ export function SpaceDetail() {
 
           {!isMainHouse && (
             <div>
-              {space.image ? (
+              {slug === "park" ? null : space.image ? (
                 <figure>
                   <ProjectImage
-                    className="editorial-image"
+                    className={slug === "cafe" ? "editorial-image cafe-detail-image" : "editorial-image"}
                     src={space.image}
                     alt={`${space.title} · ${space.imageNote || ""}`}
                   />

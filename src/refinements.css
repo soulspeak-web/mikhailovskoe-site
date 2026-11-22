@@ -2502,3 +2502,65 @@ figure > figcaption {
   margin: 0 0 16px;
   color: #e5ddce;
 }
+
+/* CAFE-DETAIL-LAYOUT-V2: только отдельная страница кафе */
+/* Фотография без обрезки в спокойном светлом паспарту. */
+.cafe-detail-page .editorial-split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  align-items: start;
+  gap: clamp(28px, 5vw, 72px);
+  margin-top: 20px;
+}
+.cafe-detail-page .editorial-split > div {
+  min-width: 0;
+  align-self: start;
+}
+.cafe-detail-page .editorial-split > div:first-child figure {
+  margin: 0;
+  padding: 22px;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f1ebe1;
+  border: 1px solid #e2d6c6;
+  box-sizing: border-box;
+}
+.cafe-detail-page .editorial-split img.editorial-image,
+.cafe-detail-page .editorial-split img.cafe-detail-image {
+  display: block;
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: 490px !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center;
+  margin: 0 auto;
+}
+/* Подпись уже объясняется в описании пространства. */
+.cafe-detail-page .editorial-split figure figcaption {
+  display: none;
+}
+.cafe-detail-page .editorial-split > div:last-child {
+  padding-top: 4px;
+}
+.cafe-detail-page .editorial-split > div:last-child .eyebrow {
+  margin-top: 0;
+}
+@media (max-width: 760px) {
+  .cafe-detail-page .editorial-split {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    margin-top: 16px;
+  }
+  .cafe-detail-page .editorial-split > div:first-child figure {
+    padding: 16px;
+  }
+  .cafe-detail-page .editorial-split img.editorial-image,
+  .cafe-detail-page .editorial-split img.cafe-detail-image {
+    max-height: 440px !important;
+  }
+}

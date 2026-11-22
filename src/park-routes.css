@@ -35,3 +35,175 @@
 @media (max-width: 980px) { .estate-park-routes__layout { grid-template-columns: 1fr; } }
 @media (max-width: 600px) { .estate-park-routes { margin: 34px 0; } .estate-park-routes__map-scroll { overflow-x: auto; } .estate-park-routes__map { min-width: 680px; } .estate-park-routes__tabs { gap: 6px; } .estate-park-routes__tab { flex: 1 1 auto; padding: 11px 12px; font-size: 12px; } .estate-park-routes__map-details { display: block; } .estate-park-routes__map-details > a { display: inline-block; margin-top: 8px; } .estate-park-routes__overlay { padding: 12px; } .estate-park-routes__dialog { max-height: calc(100dvh - 24px); } .estate-park-routes__dialog-head { padding: 13px 15px; } .estate-park-routes__dialog > img { max-width: calc(100% - 30px); max-height: 64dvh; } .estate-park-routes__dialog-footer { width: calc(100% - 30px); padding: 15px 0 23px; } .estate-park-routes__dialog-footer h3 { font-size: 25px; } }
 @media (prefers-reduced-motion: reduce) { .estate-park-routes__pin, .estate-park-routes__tab { transition: none; } }
+
+/* PARK-FULLWIDTH-2026-MAIN-FIX */
+/* Большая центральная схема, без боковой фотографии и переходов на новые страницы. */
+.park-space-detail .estate-park-routes {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1440px, calc(100vw - 64px));
+  max-width: none;
+  margin: 34px 0 58px;
+}
+.park-space-detail .estate-park-routes__layout {
+  display: block !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  width: 100%;
+}
+.park-space-detail .estate-park-routes__primary { width: 100%; min-width: 0; }
+.park-space-detail .estate-park-routes__aside { display: none !important; }
+.park-space-detail .estate-park-routes__map-scroll {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #e1d6c9;
+  background: #f7f3ec;
+}
+.park-space-detail .estate-park-routes__map {
+  position: relative;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+.park-space-detail .estate-park-routes__plan {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+}
+.park-space-detail .estate-park-routes__map-details > a { display: none !important; }
+/* Под картой можно оставить краткие характеристики парка, но не отдельное фото. */
+.park-space-detail > .editorial-split {
+  display: block;
+  max-width: 900px;
+  margin-top: 30px;
+}
+.park-space-detail > .editorial-split > div:empty { display: none; }
+.park-space-detail > .editorial-split > div:first-child > figure { display: none; }
+@media (max-width: 760px) {
+  .park-space-detail .estate-park-routes {
+    width: calc(100vw - 24px);
+    margin: 28px 0 40px;
+  }
+  .park-space-detail .estate-park-routes__map-scroll { overflow-x: auto; }
+  .park-space-detail .estate-park-routes__map { min-width: 700px !important; }
+  .park-space-detail .estate-park-routes__plan { width: 100% !important; }
+}
+
+/* PARK-MODAL-CENTERED-MAIN-2026 */
+/* Всплывающая визуализация вынесена в document.body.
+   Поэтому затемнение покрывает ВЕСЬ экран и не зависит от transform у большой карты. */
+.estate-park-routes__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 12000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(17, 20, 17, .80);
+  box-sizing: border-box;
+}
+
+/* Окно оформлено в том же стиле, что визуализации в «Концепции». */
+.estate-park-routes__dialog {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: min(924px, 100%);
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: #f9f6f0;
+  border: 0;
+  box-shadow: 0 18px 70px rgba(0, 0, 0, .32);
+  animation: estate-park-modal-in .2s ease-out both;
+}
+.estate-park-routes__dialog-head {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  gap: 16px;
+  padding: 26px 34px 22px;
+  color: #7a3036;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.estate-park-routes__dialog-head button {
+  display: grid;
+  place-items: center;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #7a3036;
+  font-size: 25px;
+  cursor: pointer;
+}
+.estate-park-routes__dialog-head button:hover { color: #a34549; }
+.estate-park-routes__dialog-head button:focus-visible {
+  outline: 2px solid #7a3036;
+  outline-offset: 2px;
+}
+
+/* Фото ВСЕГДА центрировано, без обрезки, даже при разных пропорциях. */
+.estate-park-routes__dialog > img {
+  box-sizing: border-box;
+  display: block;
+  align-self: center;
+  width: auto;
+  max-width: min(680px, calc(100% - 96px));
+  height: auto;
+  max-height: min(680px, calc(100dvh - 240px));
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  margin: 0 auto;
+}
+.estate-park-routes__dialog-footer {
+  box-sizing: border-box;
+  align-self: center;
+  width: min(680px, calc(100% - 96px));
+  max-width: none;
+  padding: 20px 0 32px;
+  text-align: left;
+}
+.estate-park-routes__dialog-footer h3 {
+  margin: 0 0 7px;
+  color: #702b33;
+  font-size: 29px;
+  font-weight: 400;
+}
+.estate-park-routes__dialog-footer p {
+  margin: 0;
+  color: #887c70;
+  font-size: 13px;
+}
+@keyframes estate-park-modal-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 760px) {
+  .estate-park-routes__overlay { padding: 12px; }
+  .estate-park-routes__dialog { max-height: calc(100dvh - 24px); }
+  .estate-park-routes__dialog-head { padding: 14px 18px 18px; }
+  .estate-park-routes__dialog > img {
+    max-width: calc(100% - 36px);
+    max-height: min(65dvh, calc(100dvh - 190px));
+  }
+  .estate-park-routes__dialog-footer {
+    width: calc(100% - 36px);
+    padding: 16px 0 24px;
+  }
+  .estate-park-routes__dialog-footer h3 { font-size: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .estate-park-routes__dialog { animation: none; }
+}

@@ -1,3 +1,4 @@
+import { createPortal } from "react-dom";
 import { useEffect, useRef, useState } from "react";
 import { asset } from "../data/content";
 import "../park-routes.css";
@@ -6,14 +7,14 @@ const routes = [
   {
     id: "general",
     title: "Общий план",
-    image: "park-routes/map-general.png",
+    image: "park-routes/map-general-hq.jpg",
     description: "План территории с проектными пространствами и основными аллеями.",
     lines: [],
   },
   {
     id: "transport",
     title: "Транспорт",
-    image: "park-routes/map-transport.png",
+    image: "park-routes/map-transport-hq.jpg",
     description: "Предлагаемые пути прибытия и подъезда к территории усадьбы.",
     lines: [
       { color: "#2869db", label: "Синий — путь гостей к парковке" },
@@ -23,7 +24,7 @@ const routes = [
   {
     id: "walking",
     title: "Пешеходные маршруты",
-    image: "park-routes/map-walking.png",
+    image: "park-routes/map-walking-hq.jpg",
     description: "Прогулочные маршруты и основные точки знакомства с парком.",
     lines: [
       { color: "#905cb8", label: "Фиолетовый — путь к главному входу" },
@@ -105,8 +106,7 @@ export default function ParkRoutes() {
                 className="estate-park-routes__plan"
                 src={asset(route.image)}
                 alt={route.description}
-                width="2048"
-                height="1509"
+                
               />
               {places.map((place, i) => (
                 <button
@@ -128,7 +128,7 @@ export default function ParkRoutes() {
               <h3>{route.title}</h3>
               <p>{route.description}</p>
             </div>
-            <a href={asset(route.image)} target="_blank" rel="noreferrer">Открыть схему ↗</a>
+            
           </div>
           {route.lines.length > 0 && (
             <div className="estate-park-routes__legend" aria-label="Обозначения маршрутов">
@@ -148,7 +148,7 @@ export default function ParkRoutes() {
 
       </div>
 
-      {activePlace && (
+      {activePlace && createPortal(
         <div
           className="estate-park-routes__overlay"
           role="presentation"
@@ -158,7 +158,7 @@ export default function ParkRoutes() {
         >
           <div className="estate-park-routes__dialog" role="dialog" aria-modal="true" aria-labelledby={dialogTitleId}>
             <div className="estate-park-routes__dialog-head">
-              <span>Проектная визуализация</span>
+              <span>Визуализация / {String(places.findIndex((place) => place.id === activePlace.id) + 1).padStart(2, "0")}</span>
               <button ref={closeButtonRef} type="button" aria-label="Закрыть визуализацию" onClick={() => setActivePlace(null)}>×</button>
             </div>
             <img src={asset(activePlace.image)} alt={activePlace.title} />
@@ -168,6 +168,7 @@ export default function ParkRoutes() {
             </div>
           </div>
         </div>
+        , document.body
       )}
     </section>
   );

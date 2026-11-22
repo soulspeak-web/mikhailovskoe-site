@@ -1,0 +1,38 @@
+/* Карточка кафе: единство с логотипами пространств 04–14 */
+.space-card > a .gastro-cafe-banner {
+  display:block; box-sizing:border-box; width:100%; height:210px;
+  padding:12px; background:#f4eee3; overflow:hidden;
+}
+.space-card > a .gastro-cafe-banner__inner {
+  position:relative; box-sizing:border-box; width:100%; height:100%;
+  border:1px solid #ded4c3; background:#f3ede1; overflow:hidden;
+  display:flex; align-items:center; padding:18px 20px;
+}
+.space-card > a .gastro-cafe-banner__copy {
+  position:relative; z-index:2; display:flex; flex-direction:column;
+  width:52%; gap:10px;
+}
+.space-card > a .gastro-cafe-banner__title {
+  font-family:Georgia,'Times New Roman',serif;
+  color:#86745d; font-weight:400; font-size:clamp(19px,1.5vw,26px); line-height:1.14;
+}
+.space-card > a .gastro-cafe-banner__note {
+  color:#938777; font-size:12px; line-height:1.4;
+}
+.space-card > a img.gastro-cafe-banner__icon {
+  position:absolute; right:5%; top:50%; transform:translateY(-50%);
+  display:block; width:42%; height:72%; max-width:none; max-height:none;
+  object-fit:contain; object-position:center; padding:0; margin:0;
+  border:0; border-radius:0; background:transparent; box-shadow:none; z-index:1;
+}
+/* Фото на отдельной странице кафе показываем целиком, без кадрирования */
+.editorial-split .cafe-detail-image,
+.editorial-split img.cafe-detail-image {
+  display:block; width:100%; height:auto; max-height:620px;
+  aspect-ratio:auto; object-fit:contain !important; object-position:center;
+  background:#f9f6f0;
+}
+@media(max-width:760px){
+  .space-card > a .gastro-cafe-banner{height:200px;}
+  .space-card > a .gastro-cafe-banner__title{font-size:23px;}
+}
