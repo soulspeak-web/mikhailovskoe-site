@@ -165,7 +165,6 @@ export default function Home() {
           </div>
         </section>
         <section className="directions section">
-          <Eyebrow>Кино как способ объединять</Eyebrow>
           <h2>Смотреть. Создавать. Сохранять.</h2>
           <div className="three-col">
             {[

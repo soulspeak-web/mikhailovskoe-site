@@ -21,11 +21,10 @@
 }
 
 .shop-catalog__image {
-  display: grid;
   place-items: center;
   width: 100%;
   aspect-ratio: 1.42;
-  background: #f0e9df;
+  /* background: #f0e9df; */
   overflow: hidden;
   border: 1px solid var(--line);
 }
@@ -119,7 +118,6 @@
 .shop-catalog__notice {
   margin: 34px 0 0;
   padding-top: 18px;
-  border-top: 1px solid var(--line);
   font-size: 12px;
   line-height: 1.6;
   color: var(--muted);

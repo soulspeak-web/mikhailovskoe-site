@@ -25,7 +25,7 @@ export const spaceImages = {
     diagram: true,
   },
   plan: {
-    image: "park-plan.webp",
+    image: "park-plan.png",
     title: "Генеральный план парка",
     diagram: true,
   },
@@ -67,7 +67,7 @@ export const projectSpaces = [
       "Часть ансамбля «Усадьба Михайловское, XVIII в.», после реставрации которой здесь предусмотрено разместить кафе.",
     detail:
       "Флигель является частью ансамбля «Усадьба Михайловское, XVIII в.». После реставрации здания здесь предусмотрено размещение кафе.",
-    gallery: ["wing", "wingDetail", "wingScheme"],
+    gallery: ["wing", "wingDetail"],
   },
   {
     id: "park",

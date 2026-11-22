@@ -8,28 +8,16 @@ export default function History() {
       <HistoryFilmstrip />
       <section className="section">
         <SectionHeading title="Архив усадьбы" />
-        <Gallery
-          items={galleries.history.map((item, index) => ({
-            ...item,
-            cardCaption:
-              index === 0
-                ? item.caption
-                : [
-                    "",
-                    "Главный дом на архивной фотографии",
-                    "Интерьер усадьбы",
-                    "Из архивной подборки усадьбы",
-                  ][index],
-          }))}
-          hideCardSources
-        />
+        <Gallery items={galleries.history} hideCardSources />
       </section>
       
-      <section className="section estate-today">
+      <section className="section">
         <SectionHeading title="Усадьба сегодня" />
         <Gallery
-          items={galleries.current}
-          hideCardCaptions
+          items={galleries.current.map((item) => ({
+            ...item,
+            cardCaption: item.cardCaption ?? "",
+          }))}
           hideCardSources
         />
       </section>

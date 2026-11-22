@@ -129,7 +129,7 @@
     "height": 528,
     "bytes": 160658
   },
-  "park-plan.webp": {
+  "park-plan.png": {
     "width": 902,
     "height": 837,
     "bytes": 63156
@@ -203,5 +203,15 @@
     "width": 1791,
     "height": 1080,
     "bytes": 323498
+  },
+  "park-shady-alley.jpg": {
+    "width": 1600,
+    "height": 1060,
+    "bytes": 558214
+  },
+  "archive-pond-pier.jpg": {
+    "width": 1572,
+    "height": 975,
+    "bytes": 352143
   }
 }

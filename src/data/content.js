@@ -239,22 +239,21 @@ description: ["flicker", "rakurs", "spectrum", "obscura"].includes(slug)
 export const galleries = {
   history: [
     {
-      src: "archive-cyclists.webp",
-      title: "Катание на велосипедах в Михайловском",
-      caption: "Ламберг, 1880-е. Московский музей-усадьба «Останкино».",
-      source: "https://russiainphoto.ru/photos/146713/",
+      src: "archive-pond-pier.jpg",
+      title: "Пруд и пирс",
+      caption: "Архивная фотография пруда на территории усадьбы",
       contain: true,
     },
     {
       src: "archive-main.webp",
       title: "Главный дом. Архивный вид",
-      caption:
-        "Архивное фото из материалов Figma. Дата, автор и источник уточняются.",
+      caption: "Исторический облик главного дома усадьбы",
     },
     {
       src: "archive-wing.webp",
-      title: "Архивный снимок из подборки",
-      caption:
+      title: "Усадебное строение",
+      caption: "Историческая фотография одного из усадебных строений",
+      attributionNote:
         "Идентификация объекта как флигеля и дата требуют подтверждения.",
     },
   ],
@@ -284,6 +283,10 @@ export const galleries = {
       title: "Вид со стороны парка",
       caption: "Фото существующего состояния из материалов проекта.",
     },
-  
+    {
+      src: "park-shady-alley.jpg",
+      title: "Тенистая аллея",
+      caption: "Современный вид парковой аллеи на территории усадьбы",
+    },
   ],
 };

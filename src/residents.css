@@ -1,0 +1,114 @@
+.residents-page .resident-space-group + .resident-space-group { margin-top: 40px; }
+.residents-page .resident-group-heading { margin-bottom: 24px; font-size: clamp(26px, 2.6vw, 34px); }
+.residents-page .resident-offerings-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.residents-page .resident-offering { min-width: 0; overflow: hidden; }
+.residents-page .resident-offering-content { padding: 24px; }
+.residents-page .resident-offering h4 { margin: 0; font-family: var(--serif); font-weight: 500; font-size: 26px; line-height: 1.18; color: var(--burgundy); overflow-wrap: anywhere; }
+.residents-page .resident-offering-icon { width: 96px; height: 96px; object-fit: contain; margin-bottom: 20px; }
+.residents-page .resident-offering-photo { display: block; width: 100%; aspect-ratio: 3 / 2; height: auto; object-fit: cover; }
+.residents-page .resident-offering p { margin: 16px 0 0; }
+.residents-page .resident-filming { padding-top: 40px; border-top: 1px solid var(--line); }
+@media (max-width: 1000px) {
+  .residents-page .resident-offerings-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .residents-page .resident-offerings-grid { grid-template-columns: 1fr; gap: 16px; }
+  .residents-page .resident-offering-content { padding: 20px; }
+  .residents-page .resident-offering h4 { font-size: 24px; }
+  .residents-page .resident-offering-icon { width: 80px; height: 80px; margin-bottom: 16px; }
+}
+
+/* Photo layout is scoped to filming locations; resident room cards stay unchanged. */
+.residents-page .resident-filming .resident-offerings-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.residents-page .resident-filming .resident-offering-photo {
+  aspect-ratio: 3 / 2;
+  object-position: center;
+}
+.residents-page .resident-filming .resident-offering:only-child {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  align-items: center;
+}
+.residents-page .resident-filming .resident-offering:only-child .resident-offering-photo {
+  aspect-ratio: 1600 / 1192;
+}
+.residents-page .resident-filming .resident-offering:only-child .resident-offering-content {
+  padding: clamp(24px, 4vw, 48px);
+}
+@media (max-width: 760px) {
+  .residents-page .resident-filming .resident-offerings-grid,
+  .residents-page .resident-filming .resident-offering:only-child {
+    grid-template-columns: 1fr;
+  }
+  .residents-page .resident-filming .resident-offering:only-child .resident-offering-content {
+    padding: 20px;
+  }
+}
+
+/* Room banners follow space-logo-cover in space-card-banners.css. */
+.residents-page .resident-offerings .resident-offerings-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.residents-page .resident-offerings .resident-offering {
+  padding: 12px;
+  border: 0;
+  background: #f4eee3;
+  min-height: clamp(210px, 15vw, 250px);
+  display: flex;
+}
+.residents-page .resident-offerings .resident-offering-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 42%);
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 18px 20px;
+  border: 1px solid #ded4c3;
+  background: #f3ede1;
+}
+.residents-page .resident-offerings .resident-offering h4 {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(19px, 1.5vw, 26px);
+  line-height: 1.14;
+  font-weight: 400;
+  color: #86745d;
+  overflow-wrap: anywhere;
+}
+.residents-page .resident-offerings .resident-offering-icon {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  width: 100%;
+  max-width: 160px;
+  height: 140px;
+  margin: 0;
+  object-fit: contain;
+}
+@media (max-width: 1100px) {
+  .residents-page .resident-offerings .resident-offerings-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .residents-page .resident-offerings .resident-offerings-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .residents-page .resident-offerings .resident-offering {
+    padding: 10px;
+    min-height: 200px;
+  }
+  .residents-page .resident-offerings .resident-offering-content {
+    padding: 16px 14px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 38%);
+    gap: 12px;
+  }
+  .residents-page .resident-offerings .resident-offering-icon { height: 120px; }
+}

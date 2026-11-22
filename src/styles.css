@@ -11,6 +11,8 @@ body {
   background: var(--milk);
   color: var(--ink);
   font-family: var(--sans);
+  /* Use baseline-aligned figures throughout the site. */
+  font-variant-numeric: lining-nums;
   font-size: 16px;
   line-height: 1.7;
 }
@@ -890,7 +892,7 @@ main:focus {
   margin-bottom: 24px;
 }
 .site-footer {
-  background: #262820;
+  background: #1C1A17;
   color: var(--paper);
   padding: 60px 0 20px;
 }

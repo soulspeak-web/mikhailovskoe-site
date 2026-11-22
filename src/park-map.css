@@ -26,16 +26,17 @@
 
 .park-interactive-scroll {
   width: 100%;
+  max-width: 900px;
+  margin-left: 0;
+  margin-right: auto;
   overflow-x: auto;
   overflow-y: hidden;
   background: #f1ede5;
-  border: 1px solid #e5d9c9;
 }
 
 .park-interactive-stage {
   position: relative;
   width: 100%;
-  min-width: 780px;
 }
 
 .park-interactive-stage > img {

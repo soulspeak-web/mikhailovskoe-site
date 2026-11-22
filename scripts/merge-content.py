@@ -1,5 +1,5 @@
 from pathlib import Path
-p=Path('src/data/projectSpaces.js');s=p.read_text(encoding='utf-8').replace("image: 'wing.webp'","image: 'wing-concept.webp'").replace("image: 'archive.png'","image: 'archive-cyclists.webp'").replace("image: 'masterplan.webp'","image: 'park-plan.webp'");p.write_text(s,encoding='utf-8')
+p=Path('src/data/projectSpaces.js');s=p.read_text(encoding='utf-8').replace("image: 'wing.webp'","image: 'wing-concept.webp'").replace("image: 'archive.png'","image: 'archive-cyclists.webp'").replace("image: 'masterplan.webp'","image: 'park-plan.png'");p.write_text(s,encoding='utf-8')
 p=Path('src/data/content.js');s=p.read_text(encoding='utf-8');s='import { projectSpaces, spaceImages } from "./projectSpaces.js";\n'+s;s=s.replace('["/history", "Об усадьбе"]','["/history", "История"]');start=s.index('export const spaces =');end=s.index('export const galleries =',start)
 s=s[:start]+'''export const spaces = rows.map(([slug,title,category,description,image],i)=>{
   const project=projectSpaces.find(p=>p.id===(slug==='main'?'main-house':slug));

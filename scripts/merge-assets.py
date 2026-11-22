@@ -2,7 +2,7 @@ from pathlib import Path
 from PIL import Image
 import json,zipfile,io,shutil
 root=Path('.');v2=root/'docs/version2';assets=root/'public/assets'
-for name in ['park.webp','park-plan.webp','wing-scheme.webp','film.webp']:
+for name in ['park.webp','park-plan.png','wing-scheme.webp','film.webp']:
  shutil.copy(v2/'public/assets'/name,assets/name)
 im=Image.open(v2/'public/assets/archive.png');im.save(assets/'archive-cyclists.webp',quality=88)
 indices={191:'portrait-krechetnikov',310:'portrait-sergey',22:'portrait-sheremetev',83:'portrait-sultanov',53:'sanatorium',50:'estate-painting',262:'wing-concept',122:'wing-detail',278:'zoning'}

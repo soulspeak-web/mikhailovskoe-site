@@ -8,10 +8,11 @@ const parkPoints = [
   { id: 1, title: "Тенистая аллея", image: "park-01-alley.jpg", x: 55.6, y: 52.2 },
   { id: 2, title: "Пирс", image: "park-02-pier.jpg", x: 83.5, y: 54.4 },
   { id: 3, title: "Амфитеатр", image: "park-03-amphitheater.jpg", x: 55.7, y: 34.1 },
-  { id: 4, title: "Розарий", image: "park-04-rose-garden.jpg", x: 55.7, y: 39.3 },
+  { id: 4, title: "Розарий", image: "park-04-rose-garden.jpg", x: 55.7, y: 41.0 },
   { id: 5, title: "Ботанический сад", image: "park-05-botanical-garden.jpg", x: 38.8, y: 30.8 },
   { id: 6, title: "Ротонда", image: "park-06-rotunda.jpg", x: 85.2, y: 66.0 },
   { id: 7, title: "Беседка", image: "park-07-gazebo.jpg", x: 75.9, y: 45.9 },
+  { id: 7, key: "gazebo-secondary", title: "Беседка", image: "park-07-gazebo.jpg", x: 80.5, y: 70.5 },
   { id: 8, title: "Птичник", image: "park-08-aviary.jpg", x: 64.1, y: 68.3 },
   { id: 9, title: "Грот с декоративным прудом", image: "park-09-grotto.jpg", x: 55.7, y: 27.1 },
 ];
@@ -45,7 +46,7 @@ export default function ParkMap() {
           />
           {parkPoints.map((point) => (
             <button
-              key={point.id}
+              key={point.key ?? point.id}
               type="button"
               className="park-interactive-pin"
               style={{ left: `${point.x}%`, top: `${point.y}%` }}
@@ -57,20 +58,6 @@ export default function ParkMap() {
             </button>
           ))}
         </div>
-      </div>
-      <div className="park-interactive-legend" aria-label="Список пространств на плане">
-        {parkPoints.map((point) => (
-          <button
-            key={point.id}
-            type="button"
-            className="park-interactive-legend-item"
-            onClick={() => setSelected(point)}
-          >
-            <span>{String(point.id).padStart(2, "0")}</span>
-            {point.title}
-            <span className="park-interactive-arrow" aria-hidden="true">↗</span>
-          </button>
-        ))}
       </div>
       <p className="park-interactive-note">
         Изображения показывают проектные визуализации будущих пространств,

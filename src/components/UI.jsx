@@ -194,6 +194,25 @@ export function Footer() {
             Хакатон «Наследие»
           </p>
 
+        <div className="footer-status">
+          Будущее начинается с сохранения прошлого
+          <p>
+            Открытие планируется на 2030 год.
+            <br />
+            Программа предварительная.
+            <br />
+            Продажа билетов и приём заявок не ведутся.
+          </p>
+        </div>
+        </div>
+
+        <nav aria-label="Навигация в подвале">
+          {navigation.map(([to, title]) => (
+            <Link key={to} to={to}>
+              {title}
+            </Link>
+          ))}
+        </nav>
           {socialLinks.length > 0 && (
             <div className="footer-socials">
               <p className="footer-socials-title">
@@ -219,25 +238,6 @@ export function Footer() {
               </div>
             </div>
           )}
-        </div>
-
-        <nav aria-label="Навигация в подвале">
-          {navigation.map(([to, title]) => (
-            <Link key={to} to={to}>
-              {title}
-            </Link>
-          ))}
-        </nav>
-        <div className="footer-status">
-          Будущее начинается с сохранения прошлого
-          <p>
-            Открытие планируется на 2030 год.
-            <br />
-            Программа предварительная.
-            <br />
-            Продажа билетов и приём заявок не ведутся.
-          </p>
-        </div>
       </div>
       <div className="container footer-bottom">
         <span>© Михайловское · Проектная концепция</span>
@@ -314,7 +314,7 @@ export function Gallery({
             </button>
             <figcaption>
               <strong>{item.title}</strong>
-              {!hideCardCaptions && (
+              {!hideCardCaptions && (item.cardCaption ?? item.caption) && (
                 <span>{item.cardCaption ?? item.caption}</span>
               )}
               {item.source && !hideCardSources && (

@@ -9,7 +9,7 @@ s=s.replace('src: "masterplan.webp",','src: "masterplan.webp", diagram: true,')
 s=s.replace('title="Территория и генеральный план" />','title="Территория и генеральный план" />\n<p className="section-deck">Геометрические аллеи регулярного парка переходят в дорожки пейзажной части. В проекте предусмотрены розарий, декоративный пруд и площадка для кинопоказов.</p>')
 needle='src: "masterplan.webp", diagram: true,'
 idx=s.index(needle);start=s.rfind('              {',0,idx)
-s=s[:start]+'''              {src:"park-plan.webp", title:"Генеральный план парка", caption:"Проектное предложение команды; не схема действующих маршрутов.", diagram:true},
+s=s[:start]+'''              {src:"park-plan.png", title:"Генеральный план парка", caption:"Проектное предложение команды; не схема действующих маршрутов.", diagram:true},
               {src:"zoning.webp", title:"Функциональное зонирование", caption:"Главный дом · рабочая схема", diagram:true},
 '''+s[start:]
 s=s.replace('<img\n                className="editorial-image"\n                src={asset(space.image)}\n                alt="Главный дом. Существующее состояние"\n              />','<figure><ProjectImage className="editorial-image" src={space.image} alt={`${space.title} · ${space.imageNote}`} /><figcaption>{space.imageNote}</figcaption></figure>')

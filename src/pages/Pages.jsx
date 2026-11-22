@@ -1,3 +1,4 @@
+import ResidentSpaces from "../components/ResidentSpaces";
 import ParkRoutes from "../components/ParkRoutes";
 import ParkMap from "../components/ParkMap";
 import ShopCatalog from "../components/ShopCatalog";
@@ -53,37 +54,9 @@ export function Concept() {
             <figcaption>Существующее состояние · материалы проекта</figcaption>
           </figure>
         </section>
-        <section className="section three-col">
-          {[
-            [
-              "01",
-              "Сохранять",
-              "Исторический облик усадьбы и ее архитектурные особенности — основа будущей концепции.",
-            ],
-            [
-              "02",
-              "Реставрировать",
-              "Провести реставрацию с опорой на исследования, архивы и согласованные решения.",
-            ],
-            [
-              "03",
-              "Наполнять жизнью",
-              "Приспособить пространства для кинопоказов, мастерских, выставок и творческих встреч.",
-            ],
-          ].map(([n, t, d]) => (
-            <div key={n}>
-              <span className="large-number">{n}</span>
-              <h2>{t}</h2>
-              <p>{d}</p>
-            </div>
-          ))}
-        </section>
         
 <section className="section concept-architecture">
-  <SectionHeading
-    label="Архитектурная идея"
-    title="Архитектурные решения"
-  />
+  <SectionHeading title="Архитектурные решения"/>
 
   <div className="architecture-solutions">
     <div>
@@ -139,18 +112,6 @@ export function Concept() {
 
           
 <ParkMap />
-
-          <div className="three-col zoning">
-            {spaces.slice(0, 3).map((s) => (
-              <div key={s.slug}>
-                <h3>{s.title}</h3>
-                <p>{s.description}</p>
-                <Link className="text-link" to={`/spaces/${s.slug}`}>
-                  Исследовать →
-                </Link>
-              </div>
-            ))}
-          </div>
         </section>
         <div className="callout">
           <div>
@@ -240,13 +201,15 @@ export function SpaceDetail() {
 {slug === "wing" && (
   <figure className="wing-detail-plan">
     <a
-      href={asset("wing-zoning.jpg")}
+      href={asset("wing-zoning-final.png")}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Открыть трехмерную схему флигеля"
     >
       <img
-        src={asset("wing-zoning.jpg")}
+        src={asset("wing-zoning-final.png")}
+        width="1240"
+        height="1038"
         alt="Трехмерная схема функционального зонирования флигеля"
         loading="lazy"
       />
@@ -415,7 +378,7 @@ export function Visit() {
             hideCardCaptions
             items={[
               {
-                src: "park-plan.webp",
+                src: "park-plan.png",
                 diagram: true,
                 title: "Генеральный план парка",
               },
@@ -487,10 +450,6 @@ export function Visit() {
   );
 }
 export function Residents() {
-  const creative = spaces.filter(
-    (s) =>
-      !["main", "wing", "park", "chronicle", "intermission"].includes(s.slug),
-  );
   return (
     <>
       <header className="page-intro container residents-intro">
@@ -505,32 +464,7 @@ export function Residents() {
         </div>
       </header>
       <div className="container page-content residents-page">
-        <section className="section">
-          <SectionHeading
-            title="Пространства для творчества"
-            to="/spaces"
-            linkText="Все пространства"
-            ruled
-          />
-          <div className="space-grid resident-spaces">
-            {creative.map((space) => (
-              <article className="resident-space-card" key={space.slug}>
-                <Link to={`/spaces/${space.slug}`}>
-                  <span className="eyebrow">{space.category}</span>
-                  <h3>{space.title}</h3>
-                  <p>{space.description}</p>
-                  <svg
-                    className="button-arrow"
-                    aria-hidden="true"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M3 12h17m-6-6 6 6-6 6" />
-                  </svg>
-                </Link>
-              </article>
-            ))}
-          </div>
-        </section>
+        <ResidentSpaces />
         <section className="section resident-form-section">
           <div>
             <Eyebrow>Будущая программа</Eyebrow>

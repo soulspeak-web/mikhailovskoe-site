@@ -357,6 +357,7 @@ figure > figcaption {
   right: 24px;
   top: -18px;
   font: var(--font-hero) var(--serif);
+  font-variant-numeric: lining-nums;
   opacity: 0.14;
 }
 .space-type p {
@@ -670,7 +671,7 @@ figure > figcaption {
 }
 .reel-controls span {
   font-size: 12px;
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 .reel-controls i {
   color: var(--muted);
@@ -678,7 +679,7 @@ figure > figcaption {
 }
 .reel-housing {
   position: relative;
-  background: #34362e;
+  background: #1c1a17;
   padding: 27px 0;
 }
 .reel-housing::before,
@@ -1407,33 +1408,9 @@ figure > figcaption {
 
 
 
-.reel-navigation {
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-  margin-top: 16px;
-}
 
-.reel-navigation button {
-  padding: 12px 22px;
-  border: 1px solid var(--burgundy);
-  background: transparent;
-  color: var(--burgundy);
-  font: inherit;
-  font-size: var(--font-sm);
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-}
 
-.reel-navigation button:hover {
-  background: var(--burgundy);
-  color: #fff;
-}
 
-.reel-navigation button:focus-visible {
-  outline: 2px solid var(--burgundy);
-  outline-offset: 3px;
-}
 
 
 /* Выравнивание логотипа в мобильной шапке */
@@ -2470,4 +2447,58 @@ figure > figcaption {
 
 .park-detail-intro > div {
   max-width: 900px;
+}
+/* Keep ticket typography inside the narrow body and tear-off stub. */
+@media (max-width: 1100px) {
+  .event-card h3 {
+    font-size: 28px;
+    line-height: 1.15;
+  }
+  .ticket-stub {
+    min-width: 0;
+  }
+  .stub-date span {
+    font-size: 9px;
+    letter-spacing: 0.04em;
+  }
+  .stub-date strong {
+    font-size: 28px;
+  }
+  .stub-date b {
+    font-size: 12px;
+  }
+  .ticket-stub > small {
+    font-size: 10px;
+    letter-spacing: 0.06em;
+  }
+  .ticket-venue {
+    overflow-wrap: anywhere;
+  }
+}
+@media (max-width: 480px) {
+  .event-card h3 {
+    font-size: 24px;
+  }
+  .ticket-time {
+    font-size: 15px;
+    letter-spacing: 0.02em;
+  }
+  .ticket-venue,
+  .ticket-bottom > span {
+    font-size: 13px;
+  }
+}
+
+/* Footer: project information under the brand, platforms in the right column. */
+.site-footer .footer-grid { align-items: start; }
+.site-footer .footer-grid > div { min-width: 0; }
+.site-footer .footer-grid > div > .footer-status { margin-top: 24px; }
+.site-footer .footer-grid > .footer-socials { margin-top: 0; }
+.site-footer .footer-grid .footer-socials-title {
+  font-family: var(--sans);
+  font-size: var(--font-base);
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0 0 16px;
+  color: #e5ddce;
 }
