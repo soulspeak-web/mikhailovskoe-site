@@ -1,0 +1,168 @@
+/* Изменения касаются только карты в разделе «Исследовать парк». */
+.estate-park-routes .estate-park-zoom {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+.estate-park-routes .estate-park-zoom__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  min-width: 0;
+}
+.estate-park-routes .estate-park-zoom__hint {
+  color: #81756d;
+  font-size: 12px;
+  line-height: 1.45;
+}
+.estate-park-routes .estate-park-zoom__controls {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 6px;
+}
+.estate-park-routes .estate-park-zoom__controls button {
+  display: grid;
+  place-items: center;
+  min-width: 38px;
+  min-height: 38px;
+  padding: 0 10px;
+  background: #f9f6f0;
+  border: 1px solid #d9c9b8;
+  color: #702b33;
+  font: inherit;
+  font-size: 20px;
+  cursor: pointer;
+}
+.estate-park-routes .estate-park-zoom__controls button[aria-label^="Сбросить"] {
+  font-size: 12px;
+}
+.estate-park-routes .estate-park-zoom__controls button:hover:not(:disabled) {
+  background: #efe8dd;
+}
+.estate-park-routes .estate-park-zoom__controls button:disabled {
+  cursor: default;
+  opacity: .45;
+}
+.estate-park-routes .estate-park-zoom__controls button:focus-visible {
+  outline: 2px solid #702b33;
+  outline-offset: 2px;
+}
+.estate-park-routes .estate-park-zoom__value {
+  display: inline-block;
+  width: 47px;
+  color: #81756d;
+  font-size: 12px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.park-space-detail .estate-park-routes .estate-park-zoom__viewport,
+.estate-park-routes .estate-park-zoom__viewport {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden !important;
+  border: 1px solid #e1d6c9;
+  background: #f7f3ec;
+  user-select: none;
+  -webkit-user-select: none;
+  overscroll-behavior: contain;
+}
+.estate-park-routes .estate-park-zoom__viewport.is-zoomed { cursor: grab; }
+.estate-park-routes .estate-park-zoom__viewport.is-zoomed:active { cursor: grabbing; }
+.estate-park-routes .estate-park-zoom__stage {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+.park-space-detail .estate-park-routes .estate-park-zoom__stage > .estate-park-routes__map,
+.estate-park-routes .estate-park-zoom__stage > .estate-park-routes__map {
+  position: relative;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+.park-space-detail .estate-park-routes .estate-park-zoom__stage .estate-park-routes__plan,
+.estate-park-routes .estate-park-zoom__stage .estate-park-routes__plan {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+}
+.estate-park-routes .estate-park-zoom__stage .estate-park-routes__pin {
+  touch-action: manipulation;
+}
+@media (max-width: 760px) {
+  .estate-park-routes .estate-park-zoom__toolbar {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .estate-park-routes .estate-park-zoom__hint {
+    flex-basis: 100%;
+  }
+  .estate-park-routes .estate-park-zoom__controls button {
+    min-width: 36px;
+    min-height: 36px;
+  }
+  .estate-park-routes .estate-park-zoom__stage .estate-park-routes__pin {
+    width: 20px;
+    height: 20px;
+    border-width: 1.5px;
+    font-size: 9px;
+    box-shadow: 0 1px 4px rgba(38, 25, 23, .25);
+  }
+  .park-space-detail .estate-park-routes .estate-park-zoom__stage > .estate-park-routes__map,
+  .estate-park-routes .estate-park-zoom__stage > .estate-park-routes__map {
+    min-width: 0 !important;
+  }
+  /* Убираем горизонтальную прокрутку, заданную старой мобильной адаптацией. */
+  .park-space-detail .estate-park-routes__map-scroll,
+  .estate-park-routes__map-scroll {
+    overflow-x: hidden !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .estate-park-routes .estate-park-zoom__stage { will-change: auto; }
+}
+
+/* BEGIN park-mobile-polish: карта маршрутов на телефонах */
+@media (max-width: 600px) {
+  .estate-park-routes .estate-park-zoom__toolbar {
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .estate-park-routes .estate-park-zoom__hint {
+    flex: 1 1 100%;
+    font-size: 11px;
+  }
+  .estate-park-routes .estate-park-zoom__controls button {
+    min-width: 34px;
+    min-height: 34px;
+  }
+  .estate-park-routes .estate-park-zoom__stage .estate-park-routes__pin {
+    width: 18px;
+    height: 18px;
+    border-width: 1.4px;
+    font-size: 8px;
+    line-height: 1;
+    box-shadow: 0 1px 3px rgba(38,25,23,.25);
+    /* Увеличение карты не должно раздувать маркеры. */
+    transform: translate(-50%, -50%) scale(var(--route-pin-relative-scale, 1));
+    transform-origin: center center;
+  }
+  .estate-park-routes .estate-park-zoom__stage .estate-park-routes__pin:hover,
+  .estate-park-routes .estate-park-zoom__stage .estate-park-routes__pin:focus-visible {
+    transform: translate(-50%, -50%) scale(var(--route-pin-relative-scale, 1));
+  }
+  .estate-park-routes .estate-park-zoom__viewport { overflow: hidden !important; }
+}
+/* END park-mobile-polish */

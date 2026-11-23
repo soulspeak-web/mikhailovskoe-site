@@ -9,7 +9,7 @@ const parkPoints = [
   { id: 1, title: "Тенистая аллея", image: "park-01-alley.jpg", x: 55.6, y: 52.2 },
   { id: 2, title: "Пирс", image: "park-02-pier.jpg", x: 83.5, y: 54.4 },
   { id: 3, title: "Амфитеатр", image: "park-03-amphitheater.jpg", x: 55.7, y: 34.1 },
-  { id: 4, title: "Розарий", image: "park-04-rose-garden.jpg", x: 55.7, y: 41.0 },
+  { id: 4, title: "Розарий", image: "park-04-rose-garden.jpg", x: 55.7, y: 39.2 },
   { id: 5, title: "Ботанический сад", image: "park-05-botanical-garden.jpg", x: 38.8, y: 30.8 },
   { id: 6, title: "Ротонда", image: "park-06-rotunda.jpg", x: 85.2, y: 66.0 },
   { id: 7, title: "Беседка", image: "park-07-gazebo.jpg", x: 75.9, y: 45.9 },
@@ -201,7 +201,7 @@ export default function ParkMap() {
       >
         <div
           className="park-map-transform"
-          style={{ transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})`, "--park-pin-inverse-scale": 1 / zoom, "--park-pin-cover-scale": 1 / Math.pow(zoom, 0.4) }}
+          style={{ transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})` }}
         >
           <div className="park-interactive-stage">
             <img
@@ -212,21 +212,31 @@ export default function ParkMap() {
               loading="lazy"
               draggable="false"
             />
-            {parkPoints.map((point) => (
-              <button
-                key={point.key ?? point.id}
-                type="button"
-                className="park-interactive-pin"
-                style={{ left: `${point.x}%`, top: `${point.y}%` }}
-                onClick={() => setSelected(point)}
-                title={point.title}
-                data-label={point.title}
-                aria-label={`Показать визуализацию: ${point.title}`}
-              >
-                {String(point.id).padStart(2, "0")}
-              </button>
-            ))}
+
           </div>
+        </div>
+        <div className="park-map-pin-overlay" aria-label="Интерактивные точки парка">
+          {parkPoints.map((point) => (
+            <button
+              key={point.key ?? point.id}
+              type="button"
+              className="park-interactive-pin"
+              style={{
+                left: `calc(50% + ${(point.x - 50) * zoom}% + ${pan.x}px)`,
+                top: `calc(50% + ${(point.y - 50) * zoom}% + ${pan.y}px)`,
+                "--pin-size": `${22 * zoom}px`,
+                "--pin-font-size": `${10 * zoom}px`,
+                "--pin-border-width": `${2 * zoom}px`,
+                "--pin-halo": `${zoom}px`,
+              }}
+              onClick={() => setSelected(point)}
+              title={point.title}
+              data-label={point.title}
+              aria-label={`Показать визуализацию: ${point.title}`}
+            >
+              {String(point.id).padStart(2, "0")}
+            </button>
+          ))}
         </div>
       </div>
       <p className="park-interactive-note">

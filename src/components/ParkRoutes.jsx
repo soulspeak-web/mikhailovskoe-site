@@ -2,6 +2,8 @@ import { createPortal } from "react-dom";
 import { useEffect, useRef, useState } from "react";
 import { asset } from "../data/content";
 import "../park-routes.css";
+import "../park-route-zoom.css";
+import ParkRouteZoom from "./ParkRouteZoom";
 
 const routes = [
   {
@@ -100,7 +102,7 @@ export default function ParkRoutes() {
 
       <div className="estate-park-routes__layout">
         <div className="estate-park-routes__primary">
-          <div className="estate-park-routes__map-scroll">
+          <ParkRouteZoom key={route.id}>
             <div className="estate-park-routes__map">
               <img
                 className="estate-park-routes__plan"
@@ -122,7 +124,7 @@ export default function ParkRoutes() {
                 </button>
               ))}
             </div>
-          </div>
+          </ParkRouteZoom>
           <div className="estate-park-routes__map-details">
             <div>
               <h3>{route.title}</h3>
