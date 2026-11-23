@@ -276,3 +276,210 @@
     transition: none;
   }
 }
+
+/* Дополнение: масштабирование генплана в разделе «Концепция». */
+.park-map-toolbar {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.park-map-hint { font-size: 12px; line-height: 1.45; color: #82756d; }
+.park-map-controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.park-map-controls button {
+  display: grid;
+  place-items: center;
+  padding: 0 10px;
+  min-width: 38px;
+  min-height: 38px;
+  background: #f9f6f0;
+  border: 1px solid #d9c9b8;
+  color: #702931;
+  font: inherit;
+  font-size: 20px;
+  cursor: pointer;
+}
+.park-map-controls button[aria-label^="Сбросить"] { font-size: 12px; }
+.park-map-controls button:disabled { cursor: default; opacity: .4; }
+.park-map-controls button:not(:disabled):hover { background: #efe8dd; }
+.park-map-controls button:focus-visible { outline: 2px solid #702931; outline-offset: 2px; }
+.park-map-scale { min-width: 42px; font-size: 12px; color: #82756d; text-align: right; font-variant-numeric: tabular-nums; }
+.park-interactive-scroll.park-map-viewport {
+  width: 100%;
+  max-width: 900px;
+  margin-inline: auto;
+  position: relative;
+  overflow: hidden;
+  overscroll-behavior: contain;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: default;
+}
+.park-interactive-scroll.park-map-viewport.is-zoomed { cursor: grab; }
+.park-interactive-scroll.park-map-viewport.is-zoomed:active { cursor: grabbing; }
+.park-map-transform { width: 100%; transform-origin: 50% 50%; will-change: transform; }
+.park-map-transform img { display: block; width: 100%; height: auto; }
+.park-map-transform .park-interactive-pin {
+  transform: translate(-50%, -50%) scale(var(--park-pin-inverse-scale, 1));
+  transform-origin: center;
+}
+.park-map-transform .park-interactive-pin:hover,
+.park-map-transform .park-interactive-pin:focus-visible {
+  transform: translate(-50%, -50%) scale(calc(var(--park-pin-inverse-scale, 1) * 1.12));
+}
+.park-preview-backdrop { box-sizing: border-box; }
+@media (max-width: 760px) {
+  .park-map-toolbar { flex-wrap: wrap; justify-content: flex-end; }
+  .park-map-hint { flex: 1 1 100%; }
+  .park-map-controls button { min-width: 36px; min-height: 36px; }
+  .park-map-transform .park-interactive-pin {
+    width: 19px;
+    height: 19px;
+    border-width: 1px;
+    font-size: 9px;
+    box-shadow: 0 1px 3px #2a1d1b30;
+  }
+}
+@media (max-width: 430px) {
+  .park-map-transform .park-interactive-pin { width: 16px; height: 16px; font-size: 8px; }
+  .park-map-scale { min-width: 36px; }
+  .park-preview-topbar { padding: 14px 18px 8px; }
+  .park-preview-dialog > img,
+  .park-preview-bottom { width: calc(100% - 36px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .park-map-transform { will-change: auto; }
+}
+
+/* park-pin-clean-main */
+/* Цветные отметки без дублирующих номеров: номера на генплане остаются исходными. */
+.park-map-transform .park-interactive-pin {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
+  color: transparent;
+  overflow: visible;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.park-map-transform .park-interactive-pin:hover,
+.park-map-transform .park-interactive-pin:focus-visible {
+  background: transparent;
+  box-shadow: none;
+}
+.park-map-transform .park-interactive-pin:focus-visible {
+  outline: 2px solid #702931;
+  outline-offset: 1px;
+}
+.park-map-transform .park-pin-dot {
+  display: block;
+  width: 12px;
+  height: 12px;
+  box-sizing: content-box;
+  border: 2px solid #fff9ef;
+  background: #702931;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px #2a1d1b50;
+  transition: transform .15s ease;
+}
+.park-map-transform .park-interactive-pin:hover .park-pin-dot,
+.park-map-transform .park-interactive-pin:focus-visible .park-pin-dot {
+  transform: scale(1.25);
+}
+/* Название появляется при наведении или клавиатурном фокусе. */
+.park-map-transform .park-interactive-pin::after {
+  content: attr(data-label);
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: calc(100% + 3px);
+  transform: translateX(-50%);
+  padding: 6px 9px;
+  border: 1px solid #d9c9b8;
+  background: #f9f6f0;
+  box-shadow: 0 5px 15px #2a1d1b24;
+  color: #702931;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.3;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.park-map-transform .park-interactive-pin:hover::after,
+.park-map-transform .park-interactive-pin:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+}
+@media (max-width: 760px) {
+  .park-map-transform .park-interactive-pin {
+    width: 28px;
+    height: 28px;
+    border: 0;
+    background: transparent;
+    font-size: 0;
+    box-shadow: none;
+  }
+  .park-map-transform .park-pin-dot { width: 10px; height: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .park-map-transform .park-pin-dot { transition: none; }
+}
+
+/* BEGIN park-plan-burgundy-main */
+/* Кнопки перекрывают напечатанные цифры и увеличиваются вместе с генпланом. */
+.park-interactive .park-map-transform .park-interactive-stage > button.park-interactive-pin {
+  position: absolute !important;
+  display: grid !important;
+  place-items: center !important;
+  width: 30px !important;
+  height: 30px !important;
+  min-width: 30px !important;
+  min-height: 30px !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  border: 2px solid #fff9ef !important;
+  border-radius: 50% !important;
+  background: #702931 !important;
+  color: #ffffff !important;
+  font: 700 11px/1 Arial, sans-serif !important;
+  text-indent: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  overflow: visible !important;
+  box-shadow: 0 0 0 3px #f9f6f0, 0 2px 8px #2a1d1b40 !important;
+  z-index: 10 !important;
+  /* Без обратного масштаба: номер и изображение растут синхронно. */
+  transform: translate(-50%, -50%) !important;
+  transform-origin: center center !important;
+}
+.park-interactive .park-map-transform .park-interactive-stage > button.park-interactive-pin:hover,
+.park-interactive .park-map-transform .park-interactive-stage > button.park-interactive-pin:focus-visible {
+  background: #923c43 !important;
+  transform: translate(-50%, -50%) scale(1.06) !important;
+  z-index: 11 !important;
+}
+.park-interactive .park-map-transform .park-interactive-stage > button.park-interactive-pin > .park-pin-dot {
+  display: none !important;
+}
+@media (max-width: 760px) {
+  .park-interactive .park-map-transform .park-interactive-stage > button.park-interactive-pin {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    min-height: 18px !important;
+    border-width: 1.5px !important;
+    font-size: 8px !important;
+    box-shadow: 0 0 0 2px #f9f6f0, 0 1px 5px #2a1d1b33 !important;
+  }
+}
+/* END park-plan-burgundy-main */

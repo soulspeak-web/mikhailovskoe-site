@@ -2564,3 +2564,33 @@ figure > figcaption {
     max-height: 440px !important;
   }
 }
+
+
+/* Нумерованные маркеры карты */
+.park-interactive-pin {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
+  border: 2px solid #fff9ef;
+  border-radius: 50%;
+  background: #702931;
+  color: #ffffff;
+  font: 700 12px/1 Arial, sans-serif;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  box-shadow: 0 0 0 4px #f9f6f0;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+@media (max-width: 760px) {
+  .park-interactive-pin {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    font-size: 11px;
+  }
+}
