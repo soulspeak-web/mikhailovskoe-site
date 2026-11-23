@@ -459,13 +459,13 @@
   box-shadow: 0 0 0 3px #f9f6f0, 0 2px 8px #2a1d1b40 !important;
   z-index: 10 !important;
   /* Без обратного масштаба: номер и изображение растут синхронно. */
-  transform: translate(-50%, -50%) !important;
+  transform: translate(-50%, -50%) scale(var(--park-pin-cover-scale, 1)) !important;
   transform-origin: center center !important;
 }
 .park-interactive .park-map-transform .park-interactive-stage > button.park-interactive-pin:hover,
 .park-interactive .park-map-transform .park-interactive-stage > button.park-interactive-pin:focus-visible {
   background: #923c43 !important;
-  transform: translate(-50%, -50%) scale(1.06) !important;
+  transform: translate(-50%, -50%) scale(var(--park-pin-cover-scale, 1)) !important;
   z-index: 11 !important;
 }
 .park-interactive .park-map-transform .park-interactive-stage > button.park-interactive-pin > .park-pin-dot {
@@ -482,4 +482,7 @@
     box-shadow: 0 0 0 2px #f9f6f0, 0 1px 5px #2a1d1b33 !important;
   }
 }
+/* BEGIN adaptive-pin-zoom note */
+/* Маркеры уменьшаются относительно карты при приближении, но сохраняют покрытие встроенных цифр. */
+/* END adaptive-pin-zoom note */
 /* END park-plan-burgundy-main */

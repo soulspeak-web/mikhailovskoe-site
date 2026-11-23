@@ -201,7 +201,7 @@ export default function ParkMap() {
       >
         <div
           className="park-map-transform"
-          style={{ transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})`, "--park-pin-inverse-scale": 1 / zoom }}
+          style={{ transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})`, "--park-pin-inverse-scale": 1 / zoom, "--park-pin-cover-scale": 1 / Math.pow(zoom, 0.4) }}
         >
           <div className="park-interactive-stage">
             <img
