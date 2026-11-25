@@ -2594,3 +2594,66 @@ figure > figcaption {
     font-size: 11px;
   }
 }
+
+
+/* Две фотографии на всю ширину контейнера */
+
+/* Галерея главного дома */
+
+/* Галерея главного дома на всю ширину контейнера */
+.main-gallery-wide .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  max-width: none;
+  gap: 28px;
+  margin: 0;
+}
+
+.main-gallery-wide .gallery-grid figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.main-gallery-wide .gallery-image {
+  display: block;
+  width: 100%;
+  height: 390px;
+  aspect-ratio: auto;
+}
+
+.main-gallery-wide .gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Мобильная версия */
+@media (max-width: 640px) {
+  .main-gallery-wide .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .main-gallery-wide .gallery-image {
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
+}
+
+
+/* Мобильная версия */
+@media (max-width: 640px) {
+  .main-gallery-wide .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+
+@media (max-width: 640px) {
+  .main-gallery-wide .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

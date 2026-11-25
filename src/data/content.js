@@ -188,7 +188,14 @@ export const spaces = rows.map(
     const project = projectSpaces.find(
       (p) => p.id === (slug === "main" ? "main-house" : slug),
     );
-    const gallery = (project?.gallery || []).map((key) => {
+    
+const galleryImages =
+  slug === "main"
+    ? (project?.gallery || []).slice(0, 2)
+    : (project?.gallery || []);
+
+const gallery = galleryImages.map((key) => {
+
       const item = spaceImages[key];
       return {
         src: item.image,

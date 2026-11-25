@@ -315,12 +315,16 @@ export function SpaceDetail() {
           />
 
           {space.gallery?.length ? (
-            <Gallery
-              items={space.gallery}
-              hideCardSources
-              hideCardCaptions
-              hideModalCaption
-            />
+            
+<div className={slug === "main" ? "main-gallery-wide" : ""}>
+  <Gallery
+    items={space.gallery}
+    hideCardSources
+    hideCardCaptions
+    hideModalCaption
+  />
+</div>
+
           ) : (
             <Placeholder label="Нужны план помещения и фотографии пространства" />
           )}
