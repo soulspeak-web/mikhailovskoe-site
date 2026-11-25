@@ -19,6 +19,24 @@ export const spaceImages = {
     title: "Фрагмент фасада флигеля",
     note: "Проектная визуализация",
   },
+
+
+wingExterior: {
+  image: "wing-new-exterior.webp",
+  title: "Внешний вид флигеля",
+  note: "Проектная визуализация",
+},
+wingCafe: {
+  image: "wing-new-cafe.webp",
+  title: "Интерьер кафе",
+  note: "Проектная визуализация",
+},
+wingDining: {
+  image: "wing-new-dining.webp",
+  title: "Обеденный зал кафе",
+  note: "Проектная визуализация",
+},
+
   wingScheme: {
     image: "wing-scheme.webp",
     title: "Зонирование флигеля",
@@ -67,7 +85,7 @@ export const projectSpaces = [
       "Часть ансамбля «Усадьба Михайловское, XVIII в.», после реставрации которой здесь предусмотрено разместить кафе.",
     detail:
       "Флигель является частью ансамбля «Усадьба Михайловское, XVIII в.». После реставрации здания здесь предусмотрено размещение кафе.",
-    gallery: ["wing", "wingDetail"],
+    gallery: ["wingExterior", "wingCafe", "wingDining"],
   },
   {
     id: "park",
