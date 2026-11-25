@@ -209,6 +209,16 @@ const gallery = galleryImages.map((key) => {
         source: item.source,
       };
     });
+    /* WING_GALLERY_4_20261125 */
+    if (slug === "wing") {
+      gallery.splice(0, gallery.length,
+        { src: "wing-gallery-01-exterior.webp", title: "Вид на флигель", caption: "Проектная визуализация флигеля", diagram: false },
+        { src: "wing-gallery-02-cafe-bar.webp", title: "Кафе. Барная зона", caption: "Проектная визуализация интерьера", diagram: false },
+        { src: "wing-gallery-03-cafe-interior.webp", title: "Кафе. Обеденная зона", caption: "Проектная визуализация интерьера", diagram: false },
+        { src: "wing-gallery-04-cafe-interior.webp", title: "Кафе. Обеденная зона", caption: "Проектная визуализация интерьера", diagram: false },
+      );
+    }
+
     return {
       slug,
       title,

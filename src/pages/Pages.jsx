@@ -316,7 +316,7 @@ export function SpaceDetail() {
 
           {space.gallery?.length ? (
             
-<div className={slug === "main" ? "main-gallery-wide" : ""}>
+<div className={slug === "main" || slug === "wing" ? "main-gallery-wide" : ""}>
   <Gallery
     items={space.gallery}
     hideCardSources
